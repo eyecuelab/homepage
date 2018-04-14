@@ -95,7 +95,40 @@
   }
 }
 
-/* #262629 -> #35353d header and footer */
-/* #1e1e21 1 & 5 */
-/* #ffffff 2 & 3 */
-/* #f8f8f8 4 */
+// .animation-container {
+//   height: 121px;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   position: relative;
+//   width: 50%;
+// }
+
+// .animated-header {
+//   display: inline;
+//   text-indent: 8px;
+// }
+
+// .animated-header span {
+//   animation: scroll 15s linear infinite 0s;
+//   color: #ffffff;
+//   opacity: 0;
+//   overflow: hidden;
+//   position: absolute;
+// }
+
+// @for $i from 1 through 5 {
+//   .animated-header span:nth-child(#{$i}) {
+//     animation-delay: #{($i * 3) - 3}s;
+//   }
+// }
+
+// @keyframes scroll {
+//   0% { opacity: 0; }
+//   5% { opacity: 0; transform: translateY(-50px); }
+//   10% { opacity: 1; transform: translateY(0px); }
+//   25% { opacity: 1; transform: translateY(0px); }
+//   30% { opacity: 0; transform: translateY(50px); }
+//   80% { opacity: 0; }
+//   100% { opacity: 0; }
+// }
