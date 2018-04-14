@@ -1,0 +1,56 @@
+@import "compass/reset";
+
+@font-face {
+  font-family: MetropolisBold;
+  src: url('../fonts/metropolis/Metropolis-Bold.otf');
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url('../fonts/open-sans/OpenSans-Light-webfont.woff');
+}
+
+.container {
+
+  .header {
+    text-transform: uppercase;
+    font-family: MetropolisBold;
+    letter-spacing: 2px;
+  }
+
+  .sub-header {
+    font-family: OpenSans;
+  }
+
+  .section {
+    min-height: 800px;
+    background: #4a4a4a;
+
+    &.section-1 {
+      background: #262629;
+      color: #ffffff;
+    }
+
+    &.section-2 {
+      background: #ffffff;
+    }
+
+    &.section-3 {
+      background: #ffffff;
+    }
+
+    &.section-4 {
+      background: #f8f8f8;
+    }
+
+    &.section-5 {
+      background: #262629;
+      color: #ffffff;
+    }
+  }
+}
+
+/* #262629 -> #35353d header and footer */
+/* #1e1e21 1 & 5 */
+/* #ffffff 2 & 3 */
+/* #f8f8f8 4 */

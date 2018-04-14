@@ -1,0 +1,115 @@
+/* line 5, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.4.1/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: MetropolisBold;
+  src: url("../fonts/metropolis/Metropolis-Bold.otf");
+}
+@font-face {
+  font-family: OpenSans;
+  src: url("../fonts/open-sans/OpenSans-Light-webfont.woff");
+}
+/* line 15, ../sass/styles.scss */
+.container .header {
+  text-transform: uppercase;
+  font-family: MetropolisBold;
+  letter-spacing: 2px;
+}
+/* line 21, ../sass/styles.scss */
+.container .sub-header {
+  font-family: OpenSans;
+}
+/* line 25, ../sass/styles.scss */
+.container .section {
+  min-height: 800px;
+  background: #4a4a4a;
+}
+/* line 29, ../sass/styles.scss */
+.container .section.section-1 {
+  background: #262629;
+  color: #ffffff;
+}
+/* line 34, ../sass/styles.scss */
+.container .section.section-2 {
+  background: #ffffff;
+}
+/* line 38, ../sass/styles.scss */
+.container .section.section-3 {
+  background: #ffffff;
+}
+/* line 42, ../sass/styles.scss */
+.container .section.section-4 {
+  background: #f8f8f8;
+}
+/* line 46, ../sass/styles.scss */
+.container .section.section-5 {
+  background: #262629;
+  color: #ffffff;
+}
+
+/* #262629 -> #35353d header and footer */
+/* #1e1e21 1 & 5 */
+/* #ffffff 2 & 3 */
+/* #f8f8f8 4 */
