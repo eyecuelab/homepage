@@ -15,37 +15,82 @@
   .header {
     text-transform: uppercase;
     font-family: MetropolisBold;
-    letter-spacing: 2px;
+    font-size: 25pt;
+    letter-spacing: 5px;
+    margin: 10px 0px 15px;
   }
 
   .sub-header {
     font-family: OpenSans;
+    font-size: 15pt;
   }
 
   .section {
     min-height: 800px;
     background: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.section-1 {
-      background: #262629;
       color: #ffffff;
+      background: radial-gradient(ellipse at top, #3a393d 20%, #27272f 50%, #202023 80%);
+
+      .header {
+        font-size: 45pt;
+        letter-spacing: 8px;
+        margin: 10px 0px 15px;
+      }
+
+      .sub-header {
+        &.faded {
+          font-size: 13pt;
+          opacity: 0.3;
+        }
+      }
     }
 
     &.section-2 {
       background: #ffffff;
+      color: #303030;
     }
 
     &.section-3 {
       background: #ffffff;
+      color: #303030;
+      text-align: center;
     }
 
     &.section-4 {
       background: #f8f8f8;
+      color: #303030;
+      text-align: center;
     }
 
     &.section-5 {
+      text-align: center;
+      min-height: 500px;
       background: #262629;
       color: #ffffff;
+      background: radial-gradient(ellipse at top, #3a393d 5%, #27272f 50%, #202023 80%);
+
+      .header {
+        font-size: 25pt;
+        margin: 10px 0px 15px;
+      }
+
+      button {
+        width: 275px;
+        border: 1px solid #fff;
+        height: 55px;
+        border-radius: 0;
+        background: transparent;
+        color: #fff;
+        text-transform: uppercase;
+        outline: none;
+        font-family: OpenSans;
+        margin: 25px 0px;
+      }
     }
   }
 }
