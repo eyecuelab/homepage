@@ -64,27 +64,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 
 @font-face {
-  font-family: MetropolisBold;
-  src: url("../fonts/metropolis/Metropolis-Bold.otf");
+  font-family: Lulo;
+  src: url("../fonts/lulo/LuloCleanOneBold.otf");
 }
-@font-face {
-  font-family: OpenSans;
-  src: url("../fonts/open-sans/OpenSans-Light-webfont.woff");
-}
-/* line 15, ../sass/styles.scss */
+/* line 37, ../sass/styles.scss */
 .container .header {
   text-transform: uppercase;
-  font-family: MetropolisBold;
+  font-family: Lulo;
   font-size: 25pt;
   letter-spacing: 5px;
   margin: 10px 0px 15px;
 }
-/* line 23, ../sass/styles.scss */
+/* line 45, ../sass/styles.scss */
 .container .sub-header {
-  font-family: OpenSans;
+  font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 15pt;
+  font-weight: 300;
 }
-/* line 28, ../sass/styles.scss */
+/* line 51, ../sass/styles.scss */
+.container .nav, .container .footer {
+  height: 50px;
+  background: #242424;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+}
+/* line 61, ../sass/styles.scss */
+.container .nav .nav-item, .container .footer .nav-item {
+  padding: 0px 10px;
+  text-transform: uppercase;
+  font-family: Lulo;
+  font-size: 7pt;
+}
+/* line 69, ../sass/styles.scss */
 .container .section {
   min-height: 800px;
   background: #4a4a4a;
@@ -92,53 +107,53 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   align-items: center;
 }
-/* line 35, ../sass/styles.scss */
+/* line 76, ../sass/styles.scss */
 .container .section.section-1 {
   color: #ffffff;
-  background: radial-gradient(ellipse at top, #3a393d 20%, #27272f 50%, #202023 80%);
+  background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 35%, rgba(0, 0, 0, 0) 60%), linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 }
-/* line 39, ../sass/styles.scss */
+/* line 81, ../sass/styles.scss */
 .container .section.section-1 .header {
   font-size: 45pt;
   letter-spacing: 8px;
-  margin: 10px 0px 15px;
+  margin: 15px 0px 20px;
 }
-/* line 46, ../sass/styles.scss */
+/* line 88, ../sass/styles.scss */
 .container .section.section-1 .sub-header.faded {
   font-size: 13pt;
   opacity: 0.3;
 }
-/* line 53, ../sass/styles.scss */
+/* line 95, ../sass/styles.scss */
 .container .section.section-2 {
-  background: #ffffff;
+  background: #fff;
   color: #303030;
 }
-/* line 58, ../sass/styles.scss */
+/* line 100, ../sass/styles.scss */
 .container .section.section-3 {
-  background: #ffffff;
+  background: #fff;
   color: #303030;
   text-align: center;
 }
-/* line 64, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 .container .section.section-4 {
   background: #f8f8f8;
   color: #303030;
   text-align: center;
 }
-/* line 70, ../sass/styles.scss */
+/* line 112, ../sass/styles.scss */
 .container .section.section-5 {
   text-align: center;
   min-height: 500px;
   background: #262629;
-  color: #ffffff;
+  color: #fff;
   background: radial-gradient(ellipse at top, #3a393d 5%, #27272f 50%, #202023 80%);
 }
-/* line 77, ../sass/styles.scss */
+/* line 119, ../sass/styles.scss */
 .container .section.section-5 .header {
   font-size: 25pt;
   margin: 10px 0px 15px;
 }
-/* line 82, ../sass/styles.scss */
+/* line 124, ../sass/styles.scss */
 .container .section.section-5 button {
   width: 275px;
   border: 1px solid #fff;
@@ -148,6 +163,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #fff;
   text-transform: uppercase;
   outline: none;
-  font-family: OpenSans;
+  font-family: 'Open Sans', Verdana, sans-serif;
   margin: 25px 0px;
 }
