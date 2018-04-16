@@ -116,7 +116,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .container .section.section-1 .header {
   font-size: 45pt;
   letter-spacing: 8px;
-  margin: 15px 0px 20px;
+  margin: 20px 0px 15px;
 }
 /* line 88, ../sass/styles.scss */
 .container .section.section-1 .sub-header.faded {
