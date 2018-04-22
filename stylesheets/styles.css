@@ -67,29 +67,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-family: Lulo;
   src: url("../fonts/lulo/LuloCleanOneBold.otf");
 }
-/* line 38, ../sass/styles.scss */
+/* line 36, ../sass/styles.scss */
+.container {
+  font-family: 'Open Sans', Verdana, sans-serif;
+  line-height: 18pt;
+}
+/* line 40, ../sass/styles.scss */
 .container .header {
   text-transform: uppercase;
   font-family: Lulo;
   font-size: 19pt;
-  letter-spacing: 2px;
+  letter-spacing: 0px;
   margin: 10px 0px 15px;
+  line-height: 25pt;
 }
-/* line 46, ../sass/styles.scss */
+/* line 49, ../sass/styles.scss */
 .container .sub-header {
   font-family: 'Open Sans', Verdana, sans-serif;
-  font-size: 14pt;
+  font-size: 16pt;
   font-weight: 300;
 }
-/* line 52, ../sass/styles.scss */
+/* line 55, ../sass/styles.scss */
 .container .body-text {
   font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 13pt;
   font-weight: 300;
 }
-/* line 58, ../sass/styles.scss */
+/* line 61, ../sass/styles.scss */
+.container .sub-text {
+  font-family: 'Open Sans', Verdana, sans-serif;
+  font-size: 7pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+/* line 69, ../sass/styles.scss */
 .container .nav, .container .footer {
-  height: 40px;
+  height: 45px;
   background: #242424;
   color: #fff;
   display: flex;
@@ -98,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   align-items: center;
   padding: 0px 20px;
 }
-/* line 68, ../sass/styles.scss */
+/* line 79, ../sass/styles.scss */
 .container .nav .logo, .container .footer .logo {
   background-image: url("../images/eyecue_logo.png");
   background-size: cover;
@@ -106,25 +120,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 27px;
   width: 27px;
 }
-/* line 76, ../sass/styles.scss */
+/* line 87, ../sass/styles.scss */
 .container .nav .nav-item, .container .footer .nav-item {
   padding: 0px 10px;
   text-transform: uppercase;
   font-family: Lulo;
   font-size: 7pt;
 }
-/* line 82, ../sass/styles.scss */
+/* line 93, ../sass/styles.scss */
 .container .nav .nav-item:last-child, .container .footer .nav-item:last-child {
   padding-right: 0px;
 }
-/* line 87, ../sass/styles.scss */
+/* line 98, ../sass/styles.scss */
 .container .nav .footer-item, .container .footer .footer-item {
   padding: 0px 10px;
   font-family: 'Open Sans';
   font-size: 9pt;
   opacity: 0.3;
 }
-/* line 95, ../sass/styles.scss */
+/* line 106, ../sass/styles.scss */
 .container .section {
   min-height: 655px;
   background: #4a4a4a;
@@ -132,7 +146,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   align-items: center;
 }
-/* line 102, ../sass/styles.scss */
+/* line 113, ../sass/styles.scss */
 .container .section.section-1 {
   display: flex;
   flex-direction: column;
@@ -140,21 +154,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #ffffff;
   background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 35%, rgba(0, 0, 0, 0) 60%), linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 }
-/* line 110, ../sass/styles.scss */
+/* line 122, ../sass/styles.scss */
 .container .section.section-1 .header {
-  font-size: 33pt;
-  margin: 18px 0px;
+  font-size: 36pt;
+  margin: 28px 0px;
 }
-/* line 116, ../sass/styles.scss */
+/* line 128, ../sass/styles.scss */
 .container .section.section-1 .sub-header.faded {
-  font-size: 13pt;
   opacity: 0.3;
 }
-/* line 122, ../sass/styles.scss */
+/* line 133, ../sass/styles.scss */
 .container .section.section-1 .animation-container {
   margin-bottom: 7%;
 }
-/* line 126, ../sass/styles.scss */
+/* line 137, ../sass/styles.scss */
 .container .section.section-1 .scroll-button {
   bottom: 8%;
   height: 37px;
@@ -166,37 +179,155 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   cursor: pointer;
   transition: all 400ms ease;
 }
-/* line 137, ../sass/styles.scss */
+/* line 148, ../sass/styles.scss */
 .container .section.section-1 .scroll-button:hover, .container .section.section-1 .scroll-button:active {
   background: #e6e6e6;
 }
-/* line 141, ../sass/styles.scss */
+/* line 152, ../sass/styles.scss */
 .container .section.section-1 .scroll-button:before {
   content: '\25BC';
 }
-/* line 147, ../sass/styles.scss */
+/* line 158, ../sass/styles.scss */
 .container .section.section-2 {
   background: #fff;
   color: #303030;
   display: flex;
   flex-direction: column;
 }
-/* line 153, ../sass/styles.scss */
+/* line 164, ../sass/styles.scss */
 .container .section.section-2 .sub-section {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-/* line 157, ../sass/styles.scss */
+/* line 170, ../sass/styles.scss */
 .container .section.section-2 .sub-section .section-body, .container .section.section-2 .sub-section .section-image {
   flex: 1;
 }
-/* line 163, ../sass/styles.scss */
+/* line 174, ../sass/styles.scss */
+.container .section.section-2 .sub-section:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+/* line 179, ../sass/styles.scss */
+.container .section.section-2 .section-image {
+  width: 350px;
+  height: 255px;
+}
+/* line 184, ../sass/styles.scss */
+.container .section.section-2 .section-image.image-1 {
+  background-image: url('../images/section_1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 184, ../sass/styles.scss */
+.container .section.section-2 .section-image.image-2 {
+  background-image: url('../images/section_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 184, ../sass/styles.scss */
+.container .section.section-2 .section-image.image-3 {
+  background-image: url('../images/section_3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 184, ../sass/styles.scss */
+.container .section.section-2 .section-image.image-4 {
+  background-image: url('../images/section_4.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 193, ../sass/styles.scss */
 .container .section.section-3 {
   background: #fff;
   color: #303030;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
-/* line 169, ../sass/styles.scss */
+/* line 200, ../sass/styles.scss */
+.container .section.section-3 .header {
+  display: flex;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+/* line 206, ../sass/styles.scss */
+.container .section.section-3 .sub-section {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  max-width: 900px;
+  margin: 25px auto;
+  height: 250px;
+}
+/* line 214, ../sass/styles.scss */
+.container .section.section-3 .sub-section .icon {
+  width: 7%;
+  height: 45px;
+  padding: 0px 5px;
+}
+/* line 220, ../sass/styles.scss */
+.container .section.section-3 .sub-section .icon.icon-1 {
+  background-image: url('../images/icon_1.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 220, ../sass/styles.scss */
+.container .section.section-3 .sub-section .icon.icon-2 {
+  background-image: url('../images/icon_2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 220, ../sass/styles.scss */
+.container .section.section-3 .sub-section .icon.icon-3 {
+  background-image: url('../images/icon_3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+/* line 228, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-text {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 0px 5px;
+}
+/* line 234, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-text .section-header {
+  padding: 0px 5px;
+  font-size: 20pt;
+  padding-bottom: 8px;
+}
+/* line 240, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-text .section-body {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 35px 0px 5px;
+  font-size: 13pt;
+}
+/* line 246, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-text .section-body span {
+  padding: 8px 0px;
+}
+/* line 252, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-bullets {
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  padding: 15px;
+  padding-left: 20px;
+  border-left: 1px solid #b6b6b6;
+  line-height: 30px;
+  height: 150px;
+  font-size: 10pt;
+}
+/* line 263, ../sass/styles.scss */
+.container .section.section-3 .sub-section .section-bullets .bullet-title {
+  font-family: Lulo;
+  letter-spacing: -1px;
+  font-weight: 100;
+}
+/* line 276, ../sass/styles.scss */
 .container .section.section-4 {
   background: #f8f8f8;
   color: #303030;
@@ -208,7 +339,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   position: relative;
   padding-top: 115px;
 }
-/* line 180, ../sass/styles.scss */
+/* line 287, ../sass/styles.scss */
 .container .section.section-4 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -216,84 +347,84 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   bottom: -25px;
   position: absolute;
 }
-/* line 187, ../sass/styles.scss */
+/* line 294, ../sass/styles.scss */
 .container .section.section-4 .image-container .image {
   width: 350px;
   height: 255px;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-1 {
   background-image: url('../images/make_1.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-2 {
   background-image: url('../images/make_2.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-3 {
   background-image: url('../images/make_3.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-4 {
   background-image: url('../images/make_4.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-5 {
   background-image: url('../images/make_5.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-6 {
   background-image: url('../images/make_6.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-7 {
   background-image: url('../images/make_7.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-8 {
   background-image: url('../images/make_8.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-9 {
   background-image: url('../images/make_9.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-10 {
   background-image: url('../images/make_10.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-11 {
   background-image: url('../images/make_11.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 192, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-12 {
   background-image: url('../images/make_12.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 202, ../sass/styles.scss */
+/* line 309, ../sass/styles.scss */
 .container .section.section-5 {
   text-align: center;
   min-height: 339px;
@@ -301,12 +432,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #fff;
   background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 }
-/* line 209, ../sass/styles.scss */
+/* line 316, ../sass/styles.scss */
 .container .section.section-5 .header {
   font-size: 19pt;
   margin: 10px 0px 15px;
 }
-/* line 214, ../sass/styles.scss */
+/* line 321, ../sass/styles.scss */
 .container .section.section-5 button {
   width: 280px;
   border: 1px solid #fff;

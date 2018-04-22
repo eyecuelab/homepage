@@ -20,9 +20,9 @@
 }
 
 // font sizes
-$super-header: 33pt;
+$super-header: 36pt;
 $header: 19pt;
-$sub-header: 14pt;
+$sub-header: 16pt;
 $body: 13pt;
 $sub-text: 7pt;
 
@@ -34,13 +34,16 @@ $body-medium: #f8f8f8;
 $body-dark: #303030;
 
 .container {
+  font-family: 'Open Sans', Verdana, sans-serif;
+  line-height: 18pt;
 
   .header {
     text-transform: uppercase;
     font-family: Lulo;
     font-size: $header;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
     margin: 10px 0px 15px;
+    line-height: 25pt;
   }
 
   .sub-header {
@@ -55,8 +58,16 @@ $body-dark: #303030;
     font-weight: 300;
   }
 
+  .sub-text {
+    font-family: 'Open Sans', Verdana, sans-serif;
+    font-size: $sub-text;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0.3;
+  }
+
   .nav, .footer {
-    height: 40px;
+    height: 45px;
     background: #242424;
     color: $text-light;
     display: flex;
@@ -100,6 +111,7 @@ $body-dark: #303030;
     align-items: center;
 
     &.section-1 {
+      // height: 100vh;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -109,12 +121,11 @@ $body-dark: #303030;
 
       .header {
         font-size: $super-header;
-        margin: 18px 0px;
+        margin: 28px 0px;
       }
 
       .sub-header {
         &.faded {
-          font-size: $body;
           opacity: 0.3;
         }
       }
@@ -153,9 +164,28 @@ $body-dark: #303030;
       .sub-section {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
         .section-body, .section-image {
           flex: 1;
+        }
+
+        &:nth-child(odd) {
+          flex-direction: row-reverse;
+        }
+      }
+
+      .section-image {
+        width: 350px;
+        height: 255px;
+
+        @for $i from 1 through 4 {
+          &.image-#{$i} {
+            background-image: #{"url('../images/section_" + $i + ".png')"};
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
         }
       }
     }
@@ -164,6 +194,83 @@ $body-dark: #303030;
       background: $body-light;
       color: $text-dark;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0px;
+      }
+
+      .sub-section {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        max-width: 900px;
+        margin: 25px auto;
+        height: 250px;
+
+        .icon {
+          width: 7%;
+          height: 45px;
+          padding: 0px 5px;
+
+          @for $i from 1 through 3 {
+            &.icon-#{$i} {
+              background-image: #{"url('../images/icon_" + $i + ".png')"};
+              background-size: contain;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+
+        .section-text {
+          display: flex;
+          flex-direction: column;
+          width: 70%;
+          padding: 0px 5px;
+
+          .section-header {
+            padding: 0px 5px;
+            font-size: 20pt;
+            padding-bottom: 8px;
+          }
+
+          .section-body {
+            display: flex;
+            flex-direction: column;
+            padding: 0px 35px 0px 5px;
+            font-size: 13pt;
+
+            span {
+              padding: 8px 0px;
+            }
+          }
+        }
+
+        .section-bullets {
+          display: flex;
+          flex-direction: column;
+          width: 23%;
+          padding: 15px;
+          padding-left: 20px;
+          border-left: 1px solid #b6b6b6;
+          line-height: 30px;
+          height: 150px;
+          font-size: 10pt;
+
+          .bullet-title {
+            font-family: Lulo;
+            letter-spacing: -1px;
+            font-weight: 100;
+          }
+
+          .bullet {
+            
+          }
+        }
+      }
     }
 
     &.section-4 {
@@ -229,6 +336,14 @@ $body-dark: #303030;
   }
 }
 
+// button animation
+//    fade in after 2 seconds
+//    arrow click down 3 steps
+
+// header animation
+//    roll similar to powur co2 counter
+//    click one letter at a time, offset
+
 // .animation-container {
 //   height: 121px;
 //   display: flex;
@@ -259,10 +374,10 @@ $body-dark: #303030;
 
 // @keyframes scroll {
 //   0% { opacity: 0; }
-//   5% { opacity: 0; transform: translateY(-50px); }
+//   5% { opacity: 0; transform: translateY(50px); }
 //   10% { opacity: 1; transform: translateY(0px); }
 //   25% { opacity: 1; transform: translateY(0px); }
-//   30% { opacity: 0; transform: translateY(50px); }
+//   30% { opacity: 0; transform: translateY(-50px); }
 //   80% { opacity: 0; }
 //   100% { opacity: 0; }
 // }
