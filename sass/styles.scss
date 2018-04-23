@@ -28,7 +28,7 @@ $sub-text: 7pt;
 
 // colors
 $text-light: #fff;
-$text-dark: #303030;
+$text-dark: #373737;
 $body-light: #fff;
 $body-medium: #f8f8f8;
 $body-dark: #303030;
@@ -67,7 +67,7 @@ $body-dark: #303030;
   }
 
   .nav, .footer {
-    height: 45px;
+    height: 50px;
     background: #242424;
     color: $text-light;
     display: flex;
@@ -105,19 +105,44 @@ $body-dark: #303030;
 
   .section {
     min-height: 655px;
-    background: #4a4a4a;
+    // background: #4a4a4a;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &.section-1 {
+      overflow: hidden;
       height: 100vh;
       display: flex;
       flex-direction: column;
       position: relative;
       color: #ffffff;
       background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 35%, transparent 60%),
+                  radial-gradient(ellipse at left, transparent 60%, #141414 90%),
                   linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
+
+      .overlay {
+        animation: grain 20s steps(1) infinite;
+        height: 150%;
+        width: 150%;
+        position: absolute;
+        background: url('../images/noise.png');
+        z-index: 1;
+        opacity: .15;
+      }
+
+      @keyframes grain {
+        0%, 100% { transform:translate(0, 0) }
+        10% { transform:translate(-5%, -10%) }
+        20% { transform:translate(-10%, 5%) }
+        30% { transform:translate(5%, -10%) }
+        40% { transform:translate(-5%, 10%) }
+        50% { transform:translate(-10%, 10%) }
+        60% { transform:translate(10%, 0%) }
+        70% { transform:translate(0%, 10%) }
+        80% { transform:translate(5%, 10%) }
+        90% { transform:translate(-10%, 10%) }
+      }
 
       .header {
         font-size: $super-header;
@@ -133,9 +158,11 @@ $body-dark: #303030;
       .animation-container {
         margin-bottom: 7%;
         padding: 25px;
+        z-index: 2;
       }
 
       .scroll-button {
+        z-index: 2;
         bottom: 8%;
         height: 37px;
         width: 25px;
@@ -144,6 +171,9 @@ $body-dark: #303030;
         position: absolute;
         outline: none;
         cursor: pointer;
+        justify-content: center;
+        border: none;
+        display: flex;
         transition: all 400ms ease;
 
         &:hover, &:active {
@@ -296,6 +326,7 @@ $body-dark: #303030;
           width: 7%;
           height: 45px;
           padding: 0px 5px;
+          color: $text-dark;
 
           @for $i from 1 through 3 {
             &.icon-#{$i} {
@@ -384,16 +415,36 @@ $body-dark: #303030;
         max-width: 1050px;
         margin: 50px 0px -50px;
         justify-content: center;
+        overflow: hidden;
 
         .image {
+          overflow: hidden;
           width: 350px;
           height: 255px;
+          transition: all 450ms ease;
+          background: $body-dark;
 
           @for $i from 1 through 12 {
-            &.maker-#{$i} {
+            .maker-#{$i} {
               background-image: #{"url('../images/make_" + $i + ".png')"};
               background-size: cover;
               background-repeat: no-repeat;
+              height: 100%;
+              width: 100%;
+              transform: scale(1.01);
+              transition: all 400ms ease;
+
+              //mobile
+              // width: 200px;
+              // height: 200px;
+
+              &:hover {
+                cursor: pointer;
+                filter: contrast(115%) grayscale(75%);
+                // filter: contrast(115%) blur(5px) grayscale(75%);
+                transform: scale(1.25);
+                opacity: .15;
+              }
             }
           }
         }
