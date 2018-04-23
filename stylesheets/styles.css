@@ -148,6 +148,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 113, ../sass/styles.scss */
 .container .section.section-1 {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -193,66 +194,134 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: #303030;
   display: flex;
   flex-direction: column;
+  padding: 100px 0px 50px;
+  position: relative;
 }
-/* line 164, ../sass/styles.scss */
+/* line 166, ../sass/styles.scss */
 .container .section.section-2 .sub-section {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  height: 400px;
+  width: 100%;
+  max-width: 1050px;
+  position: relative;
 }
-/* line 170, ../sass/styles.scss */
-.container .section.section-2 .sub-section .section-body, .container .section.section-2 .sub-section .section-image {
-  flex: 1;
+/* line 176, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-body {
+  flex: 4;
 }
-/* line 174, ../sass/styles.scss */
+/* line 180, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-image {
+  flex: 5;
+}
+/* line 184, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-body {
+  padding-right: 50px;
+  padding-left: 25px;
+}
+/* line 188, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-body .sub-header {
+  line-height: 28pt;
+  font-size: 22pt;
+  padding-bottom: 8px;
+}
+/* line 194, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-body .body-text {
+  display: flex;
+  flex-direction: column;
+}
+/* line 198, ../sass/styles.scss */
+.container .section.section-2 .sub-section .section-body .body-text span {
+  padding: 8px 0;
+}
+/* line 204, ../sass/styles.scss */
 .container .section.section-2 .sub-section:nth-child(odd) {
   flex-direction: row-reverse;
 }
-/* line 179, ../sass/styles.scss */
-.container .section.section-2 .section-image {
-  width: 350px;
-  height: 255px;
+/* line 207, ../sass/styles.scss */
+.container .section.section-2 .sub-section:nth-child(odd) .section-body {
+  padding-right: 25px;
+  padding-left: 50px;
 }
-/* line 184, ../sass/styles.scss */
-.container .section.section-2 .section-image.image-1 {
+/* line 217, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-1 {
   background-image: url('../images/section_1.png');
   background-size: contain;
   background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  max-height: 400px;
 }
-/* line 184, ../sass/styles.scss */
-.container .section.section-2 .section-image.image-2 {
+/* line 217, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-2 {
   background-image: url('../images/section_2.png');
   background-size: contain;
   background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  max-height: 400px;
 }
-/* line 184, ../sass/styles.scss */
-.container .section.section-2 .section-image.image-3 {
+/* line 217, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-3 {
   background-image: url('../images/section_3.png');
   background-size: contain;
   background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  max-height: 400px;
 }
-/* line 184, ../sass/styles.scss */
-.container .section.section-2 .section-image.image-4 {
+/* line 217, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-4 {
   background-image: url('../images/section_4.png');
   background-size: contain;
   background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  max-height: 400px;
 }
-/* line 193, ../sass/styles.scss */
+/* line 230, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-1 {
+  left: -100px;
+}
+/* line 234, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-2, .container .section.section-2 .section-image .image-3 {
+  max-height: 450px;
+  height: 450px;
+}
+/* line 239, ../sass/styles.scss */
+.container .section.section-2 .section-image .image-4 {
+  top: 40px;
+}
+/* line 245, ../sass/styles.scss */
 .container .section.section-3 {
   background: #fff;
   color: #303030;
   text-align: center;
   display: flex;
   flex-direction: column;
+  padding: 50px 0px;
 }
-/* line 200, ../sass/styles.scss */
+/* line 253, ../sass/styles.scss */
 .container .section.section-3 .header {
   display: flex;
   flex-direction: column;
   margin: 50px 0px;
 }
-/* line 206, ../sass/styles.scss */
+/* line 259, ../sass/styles.scss */
 .container .section.section-3 .sub-section {
   display: flex;
   flex-direction: row;
@@ -261,55 +330,55 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin: 25px auto;
   height: 250px;
 }
-/* line 214, ../sass/styles.scss */
+/* line 267, ../sass/styles.scss */
 .container .section.section-3 .sub-section .icon {
   width: 7%;
   height: 45px;
   padding: 0px 5px;
 }
-/* line 220, ../sass/styles.scss */
+/* line 273, ../sass/styles.scss */
 .container .section.section-3 .sub-section .icon.icon-1 {
   background-image: url('../images/icon_1.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
-/* line 220, ../sass/styles.scss */
+/* line 273, ../sass/styles.scss */
 .container .section.section-3 .sub-section .icon.icon-2 {
   background-image: url('../images/icon_2.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
-/* line 220, ../sass/styles.scss */
+/* line 273, ../sass/styles.scss */
 .container .section.section-3 .sub-section .icon.icon-3 {
   background-image: url('../images/icon_3.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
-/* line 228, ../sass/styles.scss */
+/* line 281, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-text {
   display: flex;
   flex-direction: column;
   width: 70%;
   padding: 0px 5px;
 }
-/* line 234, ../sass/styles.scss */
+/* line 287, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-text .section-header {
   padding: 0px 5px;
   font-size: 20pt;
   padding-bottom: 8px;
 }
-/* line 240, ../sass/styles.scss */
+/* line 293, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-text .section-body {
   display: flex;
   flex-direction: column;
   padding: 0px 35px 0px 5px;
   font-size: 13pt;
 }
-/* line 246, ../sass/styles.scss */
+/* line 299, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-text .section-body span {
   padding: 8px 0px;
 }
-/* line 252, ../sass/styles.scss */
+/* line 305, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-bullets {
   display: flex;
   flex-direction: column;
@@ -321,25 +390,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 150px;
   font-size: 10pt;
 }
-/* line 263, ../sass/styles.scss */
+/* line 316, ../sass/styles.scss */
 .container .section.section-3 .sub-section .section-bullets .bullet-title {
   font-family: Lulo;
   letter-spacing: -1px;
   font-weight: 100;
 }
-/* line 276, ../sass/styles.scss */
+/* line 329, ../sass/styles.scss */
 .container .section.section-4 {
   background: #f8f8f8;
   color: #303030;
   text-align: center;
-  min-height: 1105px;
+  min-height: 1140px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   position: relative;
   padding-top: 115px;
 }
-/* line 287, ../sass/styles.scss */
+/* line 340, ../sass/styles.scss */
 .container .section.section-4 .image-container {
   display: flex;
   flex-wrap: wrap;
@@ -347,97 +416,97 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   bottom: -25px;
   position: absolute;
 }
-/* line 294, ../sass/styles.scss */
+/* line 347, ../sass/styles.scss */
 .container .section.section-4 .image-container .image {
   width: 350px;
   height: 255px;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-1 {
   background-image: url('../images/make_1.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-2 {
   background-image: url('../images/make_2.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-3 {
   background-image: url('../images/make_3.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-4 {
   background-image: url('../images/make_4.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-5 {
   background-image: url('../images/make_5.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-6 {
   background-image: url('../images/make_6.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-7 {
   background-image: url('../images/make_7.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-8 {
   background-image: url('../images/make_8.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-9 {
   background-image: url('../images/make_9.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-10 {
   background-image: url('../images/make_10.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-11 {
   background-image: url('../images/make_11.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 299, ../sass/styles.scss */
+/* line 352, ../sass/styles.scss */
 .container .section.section-4 .image-container .image.maker-12 {
   background-image: url('../images/make_12.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
-/* line 309, ../sass/styles.scss */
+/* line 362, ../sass/styles.scss */
 .container .section.section-5 {
   text-align: center;
-  min-height: 339px;
+  min-height: 380px;
   background: #262629;
   color: #fff;
   background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 }
-/* line 316, ../sass/styles.scss */
+/* line 369, ../sass/styles.scss */
 .container .section.section-5 .header {
   font-size: 19pt;
   margin: 10px 0px 15px;
 }
-/* line 321, ../sass/styles.scss */
+/* line 374, ../sass/styles.scss */
 .container .section.section-5 button {
   width: 280px;
   border: 1px solid #fff;
