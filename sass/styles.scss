@@ -159,6 +159,17 @@ $body-dark: #303030;
         margin-bottom: 7%;
         padding: 25px;
         z-index: 2;
+        width: 775px;
+
+        .animated-header {
+          display: flex;
+          flex-direction: row;
+          letter-spacing: 3px;
+
+          span {
+            min-width: 35px;
+          }
+        }
       }
 
       .scroll-button {
