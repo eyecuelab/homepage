@@ -36,7 +36,7 @@ $body-dark: #303030;
 .container {
   font-family: 'Open Sans', Verdana, sans-serif;
   line-height: 18pt;
-
+  
   .header {
     text-transform: uppercase;
     font-family: Lulo;
@@ -129,6 +129,7 @@ $body-dark: #303030;
         background: url('../images/noise.png');
         z-index: 1;
         opacity: .15;
+        display: none;
       }
 
       @keyframes grain {
@@ -155,22 +156,135 @@ $body-dark: #303030;
         }
       }
 
-      .animation-container {
-        margin-bottom: 7%;
-        padding: 25px;
-        z-index: 2;
-        width: 775px;
+      .animated-header-container {
+        // -webkit-perspective: 1000px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
 
         .animated-header {
-          display: flex;
-          flex-direction: row;
-          letter-spacing: 3px;
+          width: 45px;
+          margin: 0 auto;
+          height: 40px;
+          -webkit-transition: -webkit-transform .33s;
+          transition: all .33s;
+          -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+          line-height: 1;
 
-          span {
-            min-width: 35px;
+          .side-1, .side-2, .side-3, .side-4 {
+            height: 40px;
+            background: #26262c;
+            color: white;
+            margin-top: -2px;
+            padding-top: 2px;
+          }
+
+          .side-1 {
+            -webkit-transform: translateZ(20px);
+            transform: translateZ(20px);
+          }
+
+          .side-2 {
+            -webkit-transform: rotateX(-90deg) translateY(-20px);
+            transform: rotateX(-90deg) translateY(-20px);
+            transform-origin: top center;
+          }
+
+          .side-3 {
+            -webkit-transform: translateZ(-20px) rotateX(180deg) translateY(80px);
+            transform: translateZ(-20px) rotateX(180deg) translateY(80px);
+          }
+
+          .side-4 {
+            -webkit-transform: rotateX(90deg) translateZ(140px);
+            transform: rotateX(90deg) translateZ(140px);
+          }
+
+          @for $i from 1 through 15 {
+            &.square-#{$i} {
+              // animation: roll .33s #{(2000 + random(500)) + 'ms'} ease forwards;
+              // animation: roll .33s #{2000 + ($i * 100)+ 'ms'} linear forwards;
+              animation: roll 25s #{2000 + ($i * 80)+ 'ms'} linear infinite;
+            }
+          }
+
+          @keyframes roll {
+            0% { transform: rotateX(0deg); }
+            20% { transform: rotateX(0deg); }
+            25% { transform: rotateX(-450deg); }
+            45% { transform: rotateX(-450deg); }
+            50% { transform: rotateX(-900deg); }
+            70% { transform: rotateX(-900deg); }
+            75% { transform: rotateX(-1350deg); }
+            95% { transform: rotateX(-1350deg); }
+            100% { transform: rotateX(-1800deg); }
           }
         }
       }
+
+      // .animation-container {
+      //   margin-bottom: 7%;
+      //   padding: 25px;
+      //   z-index: 2;
+      //   width: 775px;
+
+      //   .animated-header {
+      //     display: flex;
+      //     flex-direction: row;
+      //     letter-spacing: 3px;
+      //     position: relative;
+
+      //     div {
+      //       position: relative;
+      //       min-width: 40px;
+
+      //       span {
+      //         position: absolute;
+      //         transform: perspective(750);
+      //         -webkit-transform-style: preserve-3d;
+      //         transform-style: preserve-3d;
+
+      //         &.entering {
+      //           animation: flipafter 0.35s reverse linear;
+      //         }
+
+      //         &.exiting {
+      //           animation: flipbefore 0.35s reverse linear;
+      //         }
+      //       }
+      //     }
+      //   }
+
+      //   @keyframes flipbefore {
+      //     100% {
+      //       transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+      //       opacity: 0;
+      //     }
+      //   }
+      //   @keyframes flipafter {
+      //     0% {
+      //       opacity: 0;
+      //     }
+
+      //     100% {
+      //       transform: translate3d(0, 0, 0) rotateX(0);
+      //       opacity: 1;
+      //     }
+      //   }
+      //   @-webkit-keyframes flipbefore {
+      //     100% {
+      //       -webkit-transform: translate3d(0, 102.5%, 0) rotateX(-90deg);
+      //       opacity: 0;
+      //     }
+      //   }
+      //   @-webkit-keyframes flipafter {
+      //     100% {
+      //       -webkit-transform: translate3d(0, 0, 0) rotateX(0);
+      //       opacity: 1;
+      //     }
+      //   }
+      // }
 
       .scroll-button {
         z-index: 2;

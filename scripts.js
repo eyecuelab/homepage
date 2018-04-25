@@ -10,11 +10,23 @@ var animatedWords = [
 function switchWords() {
   for (var i = 0; i < animatedWords.length; i++) {
     var counterI = 0;
-
     setTimeout(function() {
+      // var parentContainer = document.getElementById("animated-header");
+      // parentContainer.getElementsByTagName('span').classList.remove("new");
+      // parentContainer.getElementsByTagName('span').classList.add("old");
       for (var j = 0; j < 15; j++) {
         var id = 'animated-word-' + j;
-        document.getElementById(id).innerHTML = animatedWords[counterI][j];
+        // var element = document.getElementById(id);
+        // element.innerHTML = animatedWords[counterI][j];
+        // element.classList.remove("entering");
+        // element.classList.add("entering");
+        var parentContainer = document.getElementById(id);
+        parentContainer.innerHTML = '';
+        var newElement = document.createElement("span");
+        newElement.setAttribute('id', j);
+        newElement.innerHTML = animatedWords[counterI][j];
+        newElement.classList.add("animate");
+        parentContainer.appendChild(newElement);
       }
       counterI++;
     }, i * 5000);
@@ -22,6 +34,6 @@ function switchWords() {
 }
 
 window.onload = function() {
-  switchWords();
-  setInterval(function() { switchWords(); }, 40000); 
+  // switchWords();
+  // setInterval(function() { switchWords(); }, 40000); 
 }
