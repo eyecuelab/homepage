@@ -129,6 +129,10 @@ $body-dark: #303030;
 
       .nav-item {
         font-size: $sub-text-mobile;
+
+        &:last-child {
+          padding-right: 10px;
+        }
       }
     }
   }
@@ -372,6 +376,7 @@ $body-dark: #303030;
 
           .section-body {
             padding: 0px 35px;
+            max-width: 500px;
           }
 
           &:nth-child(odd) {
