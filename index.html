@@ -40,19 +40,19 @@
   <body>
     <div class="container">
       <div class="nav">
-        <div class="logo"></div>
-        <div class="nav-bar">
-          <span class="nav-item">solutions</span>
-          <span class="nav-item">process</span>
-          <span class="nav-item">culture</span>
-          <span class="nav-item">contact us</span>
+        <div class="logo" onclick="scrollToSection('section-1')"></div>
+        <div class="nav-bar" id="nav-bar">
+          <span class="nav-item section-2" onclick="scrollToSection('section-2')">solutions</span>
+          <span class="nav-item section-3" onclick="scrollToSection('section-3')">process</span>
+          <span class="nav-item section-4" onclick="scrollToSection('section-4')">culture</span>
+          <span class="nav-item section-5" onclick="scrollToSection('section-5')">contact us</span>
         </div>
       </div>
-      <div class="section section-1">
+      <div class="section section-1" id="section-1">
         <div class="overlay"></div>
         <div class="animation-container">
           <div class="sub-header">Design, build, and innovate</div>
-          <!-- <div class="header animated-header-container">
+          <div class="header animated-header-container">
             <div class="header animated-header square-1">
               <div class="side-1">E</div>
               <div class="side-2">M</div>
@@ -143,15 +143,12 @@
               <div class="side-3">S</div>
               <div class="side-4 space"> </div>
             </div>
-          </div> -->
-          <div class="header animated-header-container">
-            <div class="header animated-header">your startup</div>
           </div>
           <div class="sub-header faded">Bring your product visions to reality.</div>
         </div>
-        <button class="scroll-button"></button>
+        <button class="scroll-button" onclick="scrollToSection('section-2')"></button>
       </div>
-      <div class="section section-2">
+      <div class="section section-2" id="section-2">
         <div class="sub-section">
           <div class="section-body">
             <div class="sub-header">
@@ -217,7 +214,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-3">
+      <div class="section section-3" id="section-3">
         <div class="header">
           <span>the eyecue process</span>
           <span>is forged by entrepreneurs,</span>
@@ -283,7 +280,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-4">
+      <div class="section section-4" id="section-4">
         <div>
           <div class="header">we are makers</div>
           <div class="body-text">This is what we do for fun.</div>
@@ -375,7 +372,7 @@
           </div>
         </div>
       </div>
-      <div class="section section-5">
+      <div class="section section-5" id="section-5">
         <div class="inner-container">
           <div class="header">let's build something amazing</div>
           <button>contact eyecue</button>

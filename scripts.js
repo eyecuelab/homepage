@@ -33,6 +33,14 @@ function switchWords() {
   }
 }
 
+function scrollToSection(sectionId) {
+  var el = document.getElementById(sectionId);
+  el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  // var parentContainer = document.getElementById("nav-bar");
+  // parentContainer.getElementsByTagName('span').classList.remove("active");
+  // parentContainer.getElementsByClassName(sectionId).classList.add("active");
+}
+
 window.onload = function() {
   // switchWords();
   // setInterval(function() { switchWords(); }, 40000); 
