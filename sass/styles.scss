@@ -42,67 +42,91 @@ $body-light: #fff;
 $body-medium: #f8f8f8;
 $body-dark: #303030;
 
+// animation
+$animation-time: 400ms;
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.overlay-container {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  z-index: 3;
+
   .overlay {
+    background: rgba(0, 0, 0, 0);
     position: fixed;
     top: 0px;
     bottom: 0px;
     left: 0px;
-    right: 0px;
-    background: rgba(0, 0, 0, .65);
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
+    right: 0px;      
     cursor: pointer;
+    transition: all $animation-time ease;
+  }
 
-    &.show {
-      display: flex;
+  .contact-card {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 650px;
+    max-height: 475px;
+    background: $body-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    position: relative;
+    text-transform: uppercase;
+    font-family: Lulo;
+    box-shadow: none;
+    transition: all $animation-time ease;
+
+    .close {
+      position: absolute;
+      cursor: pointer;    
+      top: 30px;
+      right: 25px;
     }
 
-    .contact-card {
-      width: 100%;
-      height: 100%;
-      max-width: 650px;
-      max-height: 475px;
-      background: $body-light;
+    .info-box {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 4;
-      position: relative;
-      text-transform: uppercase;
-      font-family: Lulo;
+      line-height: 22pt;
+      font-size: 14pt;
+      padding: 20px;
+      width: 100%;
+      max-width: 400px;
+      margin-left: 20px;
 
-      .close {
-        position: absolute;
-        cursor: pointer;    
-        top: 15px;
-        right: 15px;
-      }
-
-      .info-box {
-        display: flex;
-        flex-direction: column;
-        line-height: 22pt;
-        font-size: 14pt;
-        padding: 20px;
-        width: 100%;
-        max-width: 400px;
-        margin-left: 20px;
-
-        .sub-header {
-          font-size: 8pt;
-        }
-
-        a {
-          text-decoration: none;
-          color: inherit;
-        }
+      .sub-header {
+        font-size: 8pt;
       }
     }
   }
+
+  &.show {
+    display: flex;
+
+    .overlay {
+      background: rgba(0, 0, 0, .65);
+    }
+
+    .contact-card {
+      opacity: 1;
+      box-shadow: 0px 2px 15px -4px rgba(0, 0, 0, .5);
+    }
+  }
+}
 
 .container {
   font-family: 'Open Sans', Verdana, sans-serif;
@@ -293,8 +317,8 @@ $body-dark: #303030;
           width: 45px;
           margin: 0 auto;
           height: 40px;
-          -webkit-transition: -webkit-transform .33s;
-          transition: all .33s;
+          -webkit-transition: -webkit-transform $animation-time;
+          transition: all $animation-time;
           -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
           line-height: 1;
@@ -331,8 +355,8 @@ $body-dark: #303030;
 
           @for $i from 1 through 15 {
             &.square-#{$i} {
-              // animation: roll .33s #{(2000 + random(500)) + 'ms'} ease forwards;
-              // animation: roll .33s #{2000 + ($i * 100)+ 'ms'} linear forwards;
+              // animation: roll $animation-time #{(2000 + random(500)) + 'ms'} ease forwards;
+              // animation: roll $animation-time #{2000 + ($i * 100)+ 'ms'} linear forwards;
               animation: roll 25s #{2000 + ($i * 80)+ 'ms'} linear infinite;
             }
           }
@@ -364,7 +388,7 @@ $body-dark: #303030;
         justify-content: center;
         border: none;
         display: flex;
-        transition: all 400ms ease;
+        transition: all $animation-time ease;
 
         &:hover, &:active {
           background: #e6e6e6;
@@ -663,7 +687,7 @@ $body-dark: #303030;
             @for $j from 1 through 5 {
               .bullet:nth-child(#{$j}) {
                 top: #{($j * 30 - 10) + 'px'};
-                animation: marginx 350ms #{($i * .2) + ($j * .05) + 's'} ease forwards;
+                animation: marginx $animation-time #{($i * .2) + ($j * .05) + 's'} ease forwards;
                 
                 @include mobile {
                   top: #{($j * 25 - 10) + 'px'};
@@ -736,7 +760,7 @@ $body-dark: #303030;
           overflow: hidden;
           width: 350px;
           height: 255px;
-          transition: all 450ms ease;
+          transition: all $animation-time ease;
           background: $body-dark;
           position: relative;
 
@@ -761,10 +785,10 @@ $body-dark: #303030;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            transition: all .33s ease;
+            transition: all $animation-time ease;
             pointer-events: none;
             opacity: 0;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
           }
 
           @for $i from 1 through 12 {
@@ -775,7 +799,7 @@ $body-dark: #303030;
               height: 100%;
               width: 100%;
               transform: scale(1.01);
-              transition: all 400ms ease;
+              transition: all $animation-time ease;
 
               &:hover {
                 cursor: pointer;
@@ -828,6 +852,7 @@ $body-dark: #303030;
         margin: 25px 0px;
         font-size: 9pt;
         font-weight: 100;
+        cursor: pointer;
       }
     }
   }
