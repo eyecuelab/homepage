@@ -38,6 +38,21 @@
     <script src="scripts.js" type="text/javascript"></script>
   </head>
   <body>
+    <div class="overlay" id="overlay" onclick="closeModal()">
+      <div class="contact-card">
+        <div class="close" onclick="closeModal()">X</div>
+        <div class="info-box">
+          <span class="sub-header">general inquiries</span>
+          <span><a href="mailto:hello@eyecuelab.com">hello@eyecuelab.com</a></span>
+          <span><a href="tel:1-971-337-0494">(971) 337-0494</a></span>
+        </div>
+        <div class="info-box">
+          <span class="sub-header">location</span>
+          <span>532 NW 12th Ave</span>
+          <span>Portland, OR 97209</span>
+        </div>
+      </div>
+    </div>
     <div class="container">
       <div class="nav">
         <div class="logo" onclick="scrollToSection('section-1')"></div>
@@ -49,7 +64,7 @@
         </div>
       </div>
       <div class="section section-1" id="section-1">
-        <div class="overlay"></div>
+        <div class="noise-overlay"></div>
         <div class="animation-container">
           <div class="sub-header">Design, build, and innovate</div>
           <div class="header animated-header-container">
@@ -375,7 +390,7 @@
       <div class="section section-5" id="section-5">
         <div class="inner-container">
           <div class="header">let's build something amazing</div>
-          <button>contact eyecue</button>
+          <button onclick="openModal()">contact eyecue</button>
         </div>
       </div>
       <div class="footer">

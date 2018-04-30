@@ -41,6 +41,16 @@ function scrollToSection(sectionId) {
   // parentContainer.getElementsByClassName(sectionId).classList.add("active");
 }
 
+function openModal() {
+  var el = document.getElementById('overlay');
+  el.classList.add("show");
+}
+
+function closeModal() {
+  var el = document.getElementById('overlay');
+  el.classList.remove("show");
+}
+
 window.onload = function() {
   // switchWords();
   // setInterval(function() { switchWords(); }, 40000); 
