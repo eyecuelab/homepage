@@ -195,7 +195,6 @@ $body-dark: #303030;
         background: url('../images/noise.png');
         z-index: 1;
         opacity: .15;
-        // display: none;
       }
 
       @keyframes grain {
@@ -701,6 +700,9 @@ $body-dark: #303030;
             flex-direction: column;
             justify-content: center;
             transition: all .33s ease;
+            pointer-events: none;
+            opacity: 0;
+            margin-bottom: 30px;
           }
 
           @for $i from 1 through 12 {
@@ -720,7 +722,10 @@ $body-dark: #303030;
                 opacity: .15;
               }
 
-              // &:hover ~ .image-label { }
+              &:hover ~ .image-label {
+                opacity: 1;
+                margin-bottom: 0px;
+              }
             }
           }
         }
