@@ -45,7 +45,6 @@ $body-dark: #303030;
 // animation
 $animation-time: 400ms;
 
-
 a {
   text-decoration: none;
   color: inherit;
@@ -308,7 +307,6 @@ a {
       }
 
       .animated-header-container {
-        // -webkit-perspective: 1000px;
         text-align: center;
         display: flex;
         flex-direction: row;
@@ -388,7 +386,10 @@ a {
         justify-content: center;
         border: none;
         display: flex;
+        opacity: 0;
+        overflow: hidden;
         transition: all $animation-time ease;
+        animation: fade-in $animation-time 3s ease forwards;
 
         &:hover, &:active {
           background: #e6e6e6;
@@ -396,6 +397,25 @@ a {
  
         &:before {
           content: '\25BC';
+          position: absolute;
+          top: -15px;
+          animation: arrows 1.2s 3.33s ease infinite;
+        }
+
+        @keyframes fade-in {
+          100% { opacity: 1; }
+        }
+
+        @keyframes arrows {
+          0%, 30% {
+            top: 5px;
+          }
+          35%, 65% { 
+            top: 13px;
+          }
+          70%, 100% {
+            top: 20px;
+          }
         }
       }
     }
@@ -857,7 +877,3 @@ a {
     }
   }
 }
-
-// button animation
-//    fade in after 2 seconds
-//    arrow click down 3 steps
