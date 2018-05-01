@@ -201,27 +201,28 @@ a {
       font-family: Lulo;
       font-size: $sub-text;
       cursor: pointer;
+      opacity: .5;
 
       &:last-child {
         padding-right: 0px;
       }
 
       &.active {
-        color: #7afff8;
+        opacity: 1;
       }
     }
 
     @include mobile {
+      padding: 0px 10px;
+      
       .logo {
-        display: none;
+        height: 20px;
+        width: 20px;
       }
 
       .nav-item {
+        padding: 0px 7px;
         font-size: $sub-text-mobile;
-
-        &:last-child {
-          padding-right: 10px;
-        }
       }
     }
   }

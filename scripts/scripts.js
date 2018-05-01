@@ -51,7 +51,57 @@ function closeModal() {
   el.classList.remove("show");
 }
 
+function setActiveNav() {
+  var scrollY = window.scrollY + 50;
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
+  var nav2 = document.getElementById('nav-2');
+  var nav3 = document.getElementById('nav-3');
+  var nav4 = document.getElementById('nav-4');
+  var nav5 = document.getElementById('nav-5');
+  var section1Height = document.getElementById('section-1').offsetHeight;
+  var section2Height = document.getElementById('section-2').offsetHeight;
+  var section3Height = document.getElementById('section-3').offsetHeight;
+  var section4Height = document.getElementById('section-4').offsetHeight;
+  var section5Height = document.getElementById('section-5').offsetHeight;
+
+  if ((window.innerHeight + scrollY) >= document.body.offsetHeight) {
+    nav2.classList.remove('active');
+    nav3.classList.remove('active');
+    nav4.classList.remove('active');
+    nav5.classList.add('active');
+  } else if (scrollY >= section1Height + section2Height + section3Height) {
+    nav2.classList.remove('active');
+    nav3.classList.remove('active');
+    nav5.classList.remove('active');
+    nav4.classList.add('active');
+  } else if (scrollY >= section1Height + section2Height) {
+    nav2.classList.remove('active');
+    nav4.classList.remove('active');
+    nav5.classList.remove('active');
+    nav3.classList.add('active');
+  } else if (scrollY >= section1Height) {
+    nav3.classList.remove('active');
+    nav4.classList.remove('active');
+    nav5.classList.remove('active');
+    nav2.classList.add('active');
+  } else {
+    nav2.classList.remove('active');
+    nav3.classList.remove('active');
+    nav4.classList.remove('active');
+    nav5.classList.remove('active');
+  }
+}
+
+window.addEventListener('scroll', function(e) {
+  setActiveNav();
+});
+
+window.addEventListener('resize', function(e) {
+  setActiveNav();
+});
+
 window.onload = function() {
+  setActiveNav();
   // switchWords();
   // setInterval(function() { switchWords(); }, 40000); 
 }
