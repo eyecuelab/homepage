@@ -214,7 +214,7 @@ a {
 
     @include mobile {
       padding: 0px 10px;
-      
+
       .logo {
         height: 20px;
         width: 20px;
@@ -283,6 +283,10 @@ a {
         opacity: .15;
       }
 
+      .animation-container {
+        z-index: 2;
+      }
+
       @keyframes grain {
         0%, 100% { transform:translate(0, 0) }
         10% { transform:translate(-5%, -10%) }
@@ -308,13 +312,23 @@ a {
       }
 
       .animated-header-container {
-        text-align: center;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        min-width: 750px;
+        margin-top: 0px;
+        perspective: 4000px;
+
+        .header-wrapper {
+          display: flex;
+          flex-direction: row;
+
+          &.entering {
+            transform: translateY(40px);
+          }
+        }
 
         .animated-header {
-          width: 45px;
-          margin: 0 auto;
+          min-width: 30px;
           height: 40px;
           -webkit-transition: -webkit-transform $animation-time;
           transition: all $animation-time;
@@ -323,53 +337,31 @@ a {
           line-height: 1;
           text-align: center;
 
-          .side-1, .side-2, .side-3, .side-4 {
-            height: 40px;
-            background: #26262c;
-            color: white;
-            margin-top: -2px;
-            padding-top: 2px;
-          }
-
-          .side-1 {
-            -webkit-transform: translateZ(20px);
-            transform: translateZ(20px);
-          }
-
-          .side-2 {
-            -webkit-transform: rotateX(-90deg) translateY(-20px);
-            transform: rotateX(-90deg) translateY(-20px);
-            transform-origin: top center;
-          }
-
-          .side-3 {
-            -webkit-transform: translateZ(-20px) rotateX(180deg) translateY(80px);
-            transform: translateZ(-20px) rotateX(180deg) translateY(80px);
-          }
-
-          .side-4 {
-            -webkit-transform: rotateX(90deg) translateZ(140px);
-            transform: rotateX(90deg) translateZ(140px);
-          }
-
           @for $i from 1 through 15 {
             &.square-#{$i} {
-              // animation: roll $animation-time #{(2000 + random(500)) + 'ms'} ease forwards;
-              // animation: roll $animation-time #{2000 + ($i * 100)+ 'ms'} linear forwards;
-              animation: roll 25s #{2000 + ($i * 80)+ 'ms'} linear infinite;
+
+              &.entering {
+                transform: rotateX(-90deg) translateZ(20px);
+                animation: roll-in 665ms #{2050 + ($i * 80)+ 'ms'} linear forwards;
+              }
+
+              &.exiting {
+                transform: rotateX(0deg) translateZ(20px);
+                animation: roll-out 665ms #{2000 + ($i * 80)+ 'ms'} linear forwards;
+              }
             }
           }
 
-          @keyframes roll {
-            0% { transform: rotateX(0deg); }
-            20% { transform: rotateX(0deg); }
-            25% { transform: rotateX(450deg); }
-            45% { transform: rotateX(450deg); }
-            50% { transform: rotateX(900deg); }
-            70% { transform: rotateX(900deg); }
-            75% { transform: rotateX(1350deg); }
-            95% { transform: rotateX(1350deg); }
-            100% { transform: rotateX(1800deg); }
+          @keyframes roll-in {
+            100% {
+              transform: rotateX(0deg) translateZ(20px);
+            }
+          }
+
+          @keyframes roll-out {
+            100% {
+              transform: rotateX(90deg) translateZ(20px);
+            }
           }
         }
       }
@@ -409,13 +401,13 @@ a {
 
         @keyframes arrows {
           0%, 30% {
-            top: 5px;
+            top: 8px;
           }
           35%, 65% { 
             top: 13px;
           }
           70%, 100% {
-            top: 20px;
+            top: 18px;
           }
         }
       }

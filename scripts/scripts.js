@@ -1,32 +1,45 @@
 var animatedWords = [
   ['e', 'n', 't', 'e', 'r', 'p', 'r', 'i', 's', 'e', '', 's', 'a', 'a', 's'],   // 15
-  ['m', 'a', 'r', 'k', 'e', 't', 'p', 'l', 'a', 'c', 'e', 's', '', '', ''],     // 12
+  ['m', 'a', 'r', 'k', 'e', 't', 'p', 'l', 'a', 'c', 'e', 's', ' ', ' ', ' '],     // 12
   ['a', 'i', '', 'a', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's'],   // 15
-  ['i', 'o', 't', '', 'p', 'r', 'o', 'd', 'u', 'c', 't', 's', '', '', ''],      // 12
+  ['i', 'o', 't', ' ', 'p', 'r', 'o', 'd', 'u', 'c', 't', 's', '', '', ''],      // 12
   ['b', 'l', 'o', 'c', 'k', 'c', 'h', 'a', 'i', 'n', '', 'a', 'p', 'p', 's'],   // 15
-  ['y', 'o', 'u', 'r', '', 's', 't', 'a', 'r', 't', 'u', 'p', '', '', '']       // 12
+  ['y', 'o', 'u', 'r', ' ', 's', 't', 'a', 'r', 't', 'u', 'p', ' ', ' ', ' ']       // 12
 ];
 
 function switchWords() {
-  for (var i = 0; i < animatedWords.length; i++) {
+  for (var i = 0; i < animatedWords.length - 1; i++) {
+
     var counterI = 0;
     setTimeout(function() {
-      // var parentContainer = document.getElementById("animated-header");
-      // parentContainer.getElementsByTagName('span').classList.remove("new");
-      // parentContainer.getElementsByTagName('span').classList.add("old");
+      var parentContainer = document.getElementById("animated-header-container");
+      while (parentContainer.firstChild) parentContainer.removeChild(parentContainer.firstChild);
+
+      var enteringContainer = document.createElement("div");
+      enteringContainer.classList.add('header-wrapper');
+      enteringContainer.classList.add('entering');
+      parentContainer.appendChild(enteringContainer);
+      var exitingContainer = document.createElement("div");
+      exitingContainer.classList.add('header-wrapper');
+      parentContainer.appendChild(exitingContainer);
+
       for (var j = 0; j < 15; j++) {
         var id = 'animated-word-' + j;
-        // var element = document.getElementById(id);
-        // element.innerHTML = animatedWords[counterI][j];
-        // element.classList.remove("entering");
-        // element.classList.add("entering");
-        var parentContainer = document.getElementById(id);
-        parentContainer.innerHTML = '';
-        var newElement = document.createElement("span");
-        newElement.setAttribute('id', j);
-        newElement.innerHTML = animatedWords[counterI][j];
-        newElement.classList.add("animate");
-        parentContainer.appendChild(newElement);
+
+        var exitingElement = document.createElement("div");
+        exitingContainer.appendChild(exitingElement);
+        exitingElement.innerHTML = animatedWords[counterI][j];
+        exitingElement.classList.add('animated-header');
+        exitingElement.classList.add('square-' + (j+1));
+        exitingElement.classList.add('exiting');
+
+        var enteringElement = document.createElement("div");
+        enteringElement.classList.add('animated-header');
+        enteringContainer.appendChild(enteringElement);
+        enteringElement.innerHTML = animatedWords[counterI + 1][j];
+        enteringElement.classList.add('animated-header');
+        enteringElement.classList.add('square-' + (j+1));
+        enteringElement.classList.add('entering');
       }
       counterI++;
     }, i * 5000);
@@ -42,7 +55,7 @@ function scrollToSection(sectionId) {
   setTimeout(function() {
     this.scrolling = false;
     setActiveNav();
-  }, 1100);
+  }, 1000);
 }
 
 function openModal() {
@@ -108,6 +121,6 @@ window.addEventListener('resize', function(e) {
 
 window.onload = function() {
   setActiveNav();
-  // switchWords();
+  switchWords();
   // setInterval(function() { switchWords(); }, 40000); 
 }
