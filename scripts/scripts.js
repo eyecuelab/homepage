@@ -33,12 +33,16 @@ function switchWords() {
   }
 }
 
+var scrolling = false;
+
 function scrollToSection(sectionId) {
   var el = document.getElementById(sectionId);
+  this.scrolling = true;
   el.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  // var parentContainer = document.getElementById("nav-bar");
-  // parentContainer.getElementsByTagName('span').classList.remove("active");
-  // parentContainer.getElementsByClassName(sectionId).classList.add("active");
+  setTimeout(function() {
+    this.scrolling = false;
+    setActiveNav();
+  }, 1100);
 }
 
 function openModal() {
@@ -63,6 +67,8 @@ function setActiveNav() {
   var section3Height = document.getElementById('section-3').offsetHeight;
   var section4Height = document.getElementById('section-4').offsetHeight;
   var section5Height = document.getElementById('section-5').offsetHeight;
+
+  if (this.scrolling) { return; }
 
   if ((window.innerHeight + scrollY) >= document.body.offsetHeight) {
     nav2.classList.remove('active');
