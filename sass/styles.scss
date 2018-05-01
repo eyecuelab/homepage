@@ -309,6 +309,11 @@ a {
         &.faded {
           opacity: 0.3;
         }
+
+        @include mobile {
+          font-size: 13pt;
+          padding: 0px 25px;
+        }
       }
 
       .animated-header-container {
@@ -323,7 +328,7 @@ a {
           flex-direction: row;
 
           &.entering {
-            transform: translateY(40px);
+            transform: translateY(40px) translateZ(20px);
           }
         }
 
@@ -336,6 +341,7 @@ a {
           transform-style: preserve-3d;
           line-height: 1;
           text-align: center;
+          transform: translateZ(20px);
 
           @for $i from 1 through 15 {
             &.square-#{$i} {
@@ -343,11 +349,21 @@ a {
               &.entering {
                 transform: rotateX(-90deg) translateZ(20px);
                 animation: roll-in 665ms #{2050 + ($i * 80)+ 'ms'} linear forwards;
+
+                @include mobile {
+                  transform: rotateX(-90deg) translateZ(10px);
+                  animation: roll-in-mobile 665ms #{2050 + ($i * 80)+ 'ms'} linear forwards;
+                }
               }
 
               &.exiting {
                 transform: rotateX(0deg) translateZ(20px);
                 animation: roll-out 665ms #{2000 + ($i * 80)+ 'ms'} linear forwards;
+
+                @include mobile {
+                  transform: rotateX(0deg) translateZ(10px);
+                  animation: roll-out-mobile 665ms #{2000 + ($i * 80)+ 'ms'} linear forwards;
+                }
               }
             }
           }
@@ -358,10 +374,39 @@ a {
             }
           }
 
+          @keyframes roll-in-mobile {
+            100% {
+              transform: rotateX(0deg) translateZ(10px);
+            }
+          }
+
           @keyframes roll-out {
             100% {
               transform: rotateX(90deg) translateZ(20px);
             }
+          }
+
+          @keyframes roll-out-mobile {
+            100% {
+              transform: rotateX(90deg) translateZ(10px);
+            }
+          }
+        }
+
+        @include mobile {
+          min-width: 300px;
+          font-size: 19pt;
+
+          .header-wrapper {
+            &.entering {
+              transform: translateY(20px) translateZ(10px);
+            }
+          }
+
+          .animated-header {
+            min-width: 15px;
+            height: 20px;
+            transform: translateZ(10px);
           }
         }
       }
