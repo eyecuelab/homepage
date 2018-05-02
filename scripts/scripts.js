@@ -42,7 +42,7 @@ function switchWords() {
         enteringElement.classList.add('entering');
       }
       counterI++;
-    }, i * 5000);
+    }, i * 3500);
   }
 }
 
