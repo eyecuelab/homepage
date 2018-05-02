@@ -293,7 +293,7 @@ a {
       margin: 0 auto;
 
       @include mobile {
-        width: 95%;
+        width: 100%;
       }
     }
 
@@ -359,7 +359,7 @@ a {
 
         @include mobile {
           font-size: 13pt;
-          padding: 0px 15px;
+          padding: 0px 5%;
         }
       }
 
@@ -481,7 +481,7 @@ a {
         @include mobile {
           min-width: 415px;
           font-size: 18pt;
-          padding: 0px 15px;
+          padding: 0px 5%;
 
           .header-wrapper {
             &.entering {
@@ -623,6 +623,12 @@ a {
               padding-left: 6px;
               line-height: 18pt;
               margin-bottom: 5px;
+
+              @include mobile {
+                border-left: none;
+                margin-left: 0px;
+                padding-left: 0px;
+              }
             }
           }
 
@@ -656,7 +662,7 @@ a {
           flex-direction: column;
 
           .section-body {
-            padding: 0px 35px;
+            padding: 0px 5%;
             max-width: 500px;
           }
 
@@ -664,7 +670,7 @@ a {
             flex-direction: column;
 
             .section-body {
-              padding: 0px 25px;
+              padding: 0px 5%;
             }
           }
 
@@ -943,17 +949,15 @@ a {
           position: relative;
 
           @include mobile {
-            width: 180px;
-            height: 180px;
+            width: 90%;
+          }
+
+          @include tiny {
+            height: 170px;
 
             .image-label {
               font-size: 8pt;
             }
-          }
-
-          @include tiny {
-            width: 170px;
-            height: 170px;
           }
 
           .image-label {
