@@ -1003,6 +1003,10 @@ a {
       color: $text-light;
       background-color: $body-dark;
       background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
       .inner-container {
         margin-top: 50px;
