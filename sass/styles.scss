@@ -385,7 +385,10 @@ a {
           -webkit-transition: -webkit-transform $animation-time;
           transition: all $animation-time;
           -webkit-transform-style: preserve-3d;
+          -moz-transform-style: preserve-3d;
+          -o-transform-style: preserve-3d;
           transform-style: preserve-3d;
+          -ms-transform-style: none;
           line-height: 1;
           text-align: center;
           transform: translateZ(25px);
@@ -981,13 +984,13 @@ a {
               transform: scale(1.01);
               transition: all $animation-time ease;
 
-              &:hover, &:focus {
+              &:hover, &:active, &:focus  {
                 filter: contrast(115%) grayscale(75%);
                 transform: scale(1.25);
                 opacity: .15;
               }
 
-              &:hover ~ .image-label, &:focus ~ .image-label {
+              &:hover ~ .image-label, &:active ~ .image-label, &:focus ~ .image-label {
                 opacity: 1;
                 margin-bottom: 0px;
               }
@@ -1000,6 +1003,7 @@ a {
     &.section-5 {
       text-align: center;
       min-height: 420px;
+      height: 100px; 
       color: $text-light;
       background-color: $body-dark;
       background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
@@ -1010,6 +1014,7 @@ a {
 
       .inner-container {
         margin-top: 50px;
+        align-self: center;
       }
 
       .header {
