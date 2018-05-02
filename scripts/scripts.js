@@ -48,14 +48,25 @@ function switchWords() {
 
 var scrolling = false;
 
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, navItem) {
   var el = document.getElementById(sectionId);
+  var activeNav = document.getElementById(navItem);
+  
   this.scrolling = true;
   el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  
+  for (var i = 2; i <= 5; i++) {
+    var inactiveNav = document.getElementById('nav-' + i);
+    inactiveNav.classList.remove('active');
+  }
+
+  if (!navItem) { return; }
+
+  activeNav.classList.add('active');
+
   setTimeout(function() {
     this.scrolling = false;
-    setActiveNav();
-  }, 1000);
+  }, 1100);
 }
 
 function openModal() {
