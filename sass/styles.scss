@@ -7,6 +7,12 @@
 }
 
 // media query mixins
+@mixin tiny {
+  @media (max-width: 355px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media (max-width: 667px) {
     @content;
@@ -214,6 +220,10 @@ a {
       height: 27px;
       width: 27px;
       cursor: pointer;
+
+      @include tiny {
+        display: none;
+      }
     }
 
     .nav-item {
@@ -929,6 +939,11 @@ a {
             .image-label {
               font-size: 8pt;
             }
+          }
+
+          @include tiny {
+            width: 170px;
+            height: 170px;
           }
 
           .image-label {
