@@ -40,7 +40,7 @@ $text-medium: #555;
 $text-dark: #373737;
 $body-light: #fff;
 $body-medium: #f8f8f8;
-$body-dark: #303030;
+$body-dark: #262629;
 
 // animation
 $animation-time: 400ms;
@@ -223,6 +223,7 @@ a {
       font-size: $sub-text;
       cursor: pointer;
       opacity: .5;
+      user-select: none;
 
       &:last-child {
         padding-right: 0px;
@@ -293,6 +294,7 @@ a {
       flex-direction: column;
       position: relative;
       color: #ffffff;
+      background-color: $body-dark;
       background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 35%, transparent 60%),
                   radial-gradient(ellipse at left, transparent 60%, #141414 90%),
                   linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
@@ -957,14 +959,13 @@ a {
               transform: scale(1.01);
               transition: all $animation-time ease;
 
-              &:hover {
-                cursor: pointer;
+              &:hover, &:focus {
                 filter: contrast(115%) grayscale(75%);
                 transform: scale(1.25);
                 opacity: .15;
               }
 
-              &:hover ~ .image-label {
+              &:hover ~ .image-label, &:focus ~ .image-label {
                 opacity: 1;
                 margin-bottom: 0px;
               }
@@ -977,8 +978,8 @@ a {
     &.section-5 {
       text-align: center;
       min-height: 420px;
-      background: #262629;
       color: $text-light;
+      background-color: $body-dark;
       background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 
       .inner-container {
