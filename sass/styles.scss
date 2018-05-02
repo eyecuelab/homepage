@@ -298,7 +298,7 @@ a {
                   linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
 
       @include mobile {
-        background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 35%, transparent 60%),
+        background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 60%),
                     linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
       }
 
