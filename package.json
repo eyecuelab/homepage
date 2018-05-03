@@ -5,7 +5,8 @@
   "main": "scripts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"=> Server Started!\" && echo \"=> Navigate to localhost:8080\" && node server.js"
+    "start": "echo \"=> Server Started!\" && echo \"=> Navigate to localhost:8080\" && node server.js",
+    "deploy": "git push production master"
   },
   "repository": {
     "type": "git",
