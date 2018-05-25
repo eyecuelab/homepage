@@ -49,6 +49,21 @@ function switchWords() {
 
 var scrolling = false;
 
+function showCard() {
+  setTimeout(function() {
+    document.getElementById('captcha').remove();
+    var infoBox1 = document.getElementById("info-box-1");
+    infoBox1.innerHTML += "<span class='sub-header'>general inquiries</span>";
+    infoBox1.innerHTML += "<span><a href='mailto:hello@eyecuelab.com'>hello@eyecuelab.com</a></span>";
+    infoBox1.innerHTML += "<span><a href='tel:1-971-337-0494'>(971) 337-0494</a></span>";
+    var infoBox2 = document.getElementById("info-box-2");
+    infoBox2.innerHTML += "<span class='sub-header'>location</span>";
+    infoBox2.innerHTML += "<span>532 NW 12th Ave</span>";
+    infoBox2.innerHTML += "<span>Portland, OR 97209</span>";
+  }, 1100);
+}
+
+
 function scrollToSection(sectionId, navItem) {
   var el = document.getElementById(sectionId);
   var activeNav = document.getElementById(navItem);
