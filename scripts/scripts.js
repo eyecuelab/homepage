@@ -51,18 +51,20 @@ var scrolling = false;
 
 function showCard() {
   setTimeout(function() {
-    document.getElementById('captcha').classList.add('animate');
+    // document.getElementById('captcha').classList.add('animate'); // removed tempoarily to see if captcha is needed
     var infoBox1 = document.getElementById("info-box-1");
+    infoBox1.innerHTML = "";
     infoBox1.innerHTML += "<span class='sub-header'>general inquiries</span>";
     infoBox1.innerHTML += "<span><a href='mailto:hello@eyecuelab.com'>hello@eyecuelab.com</a></span>";
     infoBox1.innerHTML += "<span><a href='tel:1-971-337-0494'>(971) 337-0494</a></span>";
     var infoBox2 = document.getElementById("info-box-2");
+    infoBox2.innerHTML = "";
     infoBox2.innerHTML += "<span class='sub-header'>location</span>";
     infoBox2.innerHTML += "<span>532 NW 12th Ave</span>";
     infoBox2.innerHTML += "<span>Portland, OR 97209</span>";
     infoBox1.classList.add('animate-1');
     infoBox2.classList.add('animate-2');
-  }, 1100);
+  }, 250);
 }
 
 
@@ -90,6 +92,7 @@ function scrollToSection(sectionId, navItem) {
 function openModal() {
   var el = document.getElementById('overlay');
   el.classList.add("show");
+  this.showCard()
 }
 
 function closeModal() {

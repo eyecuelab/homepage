@@ -154,7 +154,7 @@ a {
       }
 
       &.animate-1, &.animate-2 {
-        animation: slide-in 600ms 150ms ease forwards;
+        animation: slide-in 600ms 0ms ease forwards;
       }
 
       @keyframes slide-in {

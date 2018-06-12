@@ -168,7 +168,7 @@ a {
 }
 /* line 156, ../sass/styles.scss */
 .overlay-container .contact-card .info-box.animate-1, .overlay-container .contact-card .info-box.animate-2 {
-  animation: slide-in 600ms 150ms ease forwards;
+  animation: slide-in 600ms 0ms ease forwards;
 }
 @keyframes slide-in {
   0% {
