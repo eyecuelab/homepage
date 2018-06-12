@@ -64,7 +64,7 @@ function showCard() {
     infoBox2.innerHTML += "<span>Portland, OR 97209</span>";
     infoBox1.classList.add('animate-1');
     infoBox2.classList.add('animate-2');
-  }, 250);
+  }, 0);
 }
 
 
