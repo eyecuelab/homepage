@@ -51,7 +51,6 @@ var scrolling = false;
 
 function showCard() {
   setTimeout(function() {
-    // document.getElementById('captcha').classList.add('animate'); // removed tempoarily to see if captcha is needed
     var infoBox1 = document.getElementById("info-box-1");
     infoBox1.innerHTML = "";
     infoBox1.innerHTML += "<span class='sub-header'>general inquiries</span>";
