@@ -364,20 +364,20 @@ a {
                     linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
       }
 
-      .noise-overlay {
-        animation: grain 20s steps(1) infinite;
-        height: 150%;
-        width: 150%;
-        position: absolute;
-        background: url('../images/noise.jpg');
-        z-index: 1;
-        opacity: .15;
+      // .noise-overlay {
+      //   animation: grain 20s steps(1) infinite;
+      //   height: 150%;
+      //   width: 150%;
+      //   position: absolute;
+      //   background: url('../images/noise.jpg');
+      //   z-index: 1;
+      //   opacity: .15;
 
-        /* IE10+ */
-        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-          display: none;
-        }
-      }
+      //   /* IE10+ */
+      //   @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      //     display: none;
+      //   }
+      // }
 
       .animation-container {
         max-width: 100%;

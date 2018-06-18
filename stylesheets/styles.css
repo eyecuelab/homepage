@@ -388,23 +388,6 @@ a {
     background: radial-gradient(ellipse at top left 35%, #3a393d 10%, #27272f 60%), linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
   }
 }
-/* line 367, ../sass/styles.scss */
-.container .section.section-1 .noise-overlay {
-  animation: grain 20s steps(1) infinite;
-  height: 150%;
-  width: 150%;
-  position: absolute;
-  background: url("../images/noise.png");
-  z-index: 1;
-  opacity: .15;
-  /* IE10+ */
-}
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  /* line 367, ../sass/styles.scss */
-  .container .section.section-1 .noise-overlay {
-    display: none;
-  }
-}
 /* line 382, ../sass/styles.scss */
 .container .section.section-1 .animation-container {
   max-width: 100%;
