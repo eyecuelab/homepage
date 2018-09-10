@@ -231,6 +231,11 @@ a {
     .rick {
       text-decoration: underline;
     }
+
+    @include tablet {
+      padding: 20px;
+      margin-top: 10px;
+    }
   }
 
   .body-logo-container {
@@ -263,6 +268,10 @@ a {
 
     &.margin {
       margin-bottom: 0px;
+
+      @include mobile {
+        padding: 0px;
+      }
     }
   }
 
@@ -272,7 +281,7 @@ a {
     font-weight: 300;
 
     &.margin {
-      margin: 35px 0px 10px;
+      margin: 45px 0px 10px;
     }
   }
 
