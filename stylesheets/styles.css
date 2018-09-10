@@ -227,7 +227,7 @@ a {
 /* line 214, ../sass/styles.scss */
 .container .pdf {
   margin: 75px auto;
-  max-width: 750px;
+  max-width: 800px;
 }
 /* line 218, ../sass/styles.scss */
 .container .pdf .divider {
@@ -241,6 +241,10 @@ a {
 /* line 227, ../sass/styles.scss */
 .container .pdf ol {
   margin-left: 20px;
+}
+/* line 231, ../sass/styles.scss */
+.container .pdf .rick {
+  text-decoration: underline;
 }
 /* line 236, ../sass/styles.scss */
 .container .body-logo-container {
