@@ -42,7 +42,7 @@ $super-header: 36pt;
 $header: 20pt;
 $header-mobile: 17pt;
 $sub-header: 16pt;
-$body: 11pt;
+$body: 12pt;
 $sub-text: 8pt;
 $sub-text-mobile: 6pt;
 
@@ -463,13 +463,13 @@ a {
         opacity: 1;
         flex-direction: column;
         justify-content: space-around;
-        animation: bringin 3s ease 0s 1 forwards;
+        animation: bringin 1.5s ease-out 0s 1 forwards;
 
         @keyframes bringin {
           0% {
             opacity: 0;
           }
-          33% {
+          66% {
             opacity: 0;
           }
           100% {
@@ -514,6 +514,7 @@ a {
         color: $text-dark;
         font-size: $body;
         font-family: 'Open Sans', Verdana, sans-serif;
+        font-weight: 500;
       }
     }
 
@@ -567,16 +568,19 @@ a {
           flex-direction: column;
           justify-content: center;
           height: 75vh;
-          width: 27.5vw;
+          width: 40%;
+          max-width: 700px;
           margin: 0 10vw;
           color: $text-light;
-          @include mobile {
+          @include tablet {
             width: 100%;
             align-items: center;
+            max-width: 100%;
           }
           h1 {
             font-family: Lulo;
             font-size: $sub-header;
+            line-height: 20pt;
           }
           p {
             margin-top: 2.5vh;
@@ -670,7 +674,7 @@ a {
           border-left: 1px solid #b6b6b6;
           line-height: 27px;
           height: 25vh;
-          font-size: 9pt;
+          font-size: 8.5pt;
           justify-content: center;
           font-weight: 400;
           position: relative;
@@ -685,6 +689,7 @@ a {
             position: absolute;
             left: 45px;
             opacity: .7;
+            text-transform: uppercase;
           }
 
           @include mobile {
@@ -800,6 +805,7 @@ a {
       #section-4-text-container {
         flex: 1;
         padding: 3%;
+        margin-right: 10vw;
         h1 {
           font-family: Lulo;
           font-size: $sub-header;
@@ -819,6 +825,7 @@ a {
         }
         @include tablet {
           padding-top: 0;
+          margin: 0;
         }
       }
 
