@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "echo \"=> Server Started!\" && echo \"=> Navigate to localhost:8080\" && echo \"=> Enter 'compass watch' for live Sass compiling\" && node server.js",
     "minify": "node-minify --compressor clean-css --input 'stylesheets/styles.css' --output 'stylesheets/styles.min.css' && node-minify --compressor babel-minify --input 'scripts/scripts.js' --output 'scripts/scripts.min.js'",
+    "minify-win": "node-minify --compressor clean-css --input stylesheets/styles.css --output stylesheets/styles.min.css && node-minify --compressor babel-minify --input scripts/scripts.js --output scripts/scripts.min.js && node-minify --compressor clean-css --input stylesheets/people.css --output stylesheets/people.min.css && node-minify --compressor babel-minify --input scripts/people.js --output scripts/people.min.js",
     "deploy": "npm run minify && git push production master"
   },
   "repository": {
@@ -21,6 +22,7 @@
   "homepage": "https://github.com/eyecuelab/homepage#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "jquery": "^3.3.1",
     "node-minify": "^3.1.0"
   }
 }
