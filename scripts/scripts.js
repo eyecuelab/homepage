@@ -2,7 +2,7 @@ var animatedWords = [
   ['e', 'n', 't', 'e', 'r', 'p', 'r', 'i', 's', 'e', '', 's', 'a', 'a', 's'],
   ['m', 'a', 'r', 'k', 'e', 't', 'p', 'l', 'a', 'c', 'e', 's', ' ', ' ', ' '],
   ['a', 'i', '', 'a', 'p', 'p', 'l', 'i', 'c', 'a', 't', 'i', 'o', 'n', 's'],
-  ['i', 'o', 't', ' ', 'p', 'r', 'o', 'd', 'u', 'c', 't', 's', '', '', ''], 
+  ['i', 'o', 't', ' ', 'p', 'r', 'o', 'd', 'u', 'c', 't', 's', '', '', ''],
   ['b', 'l', 'o', 'c', 'k', 'c', 'h', 'a', 'i', 'n', '', 'a', 'p', 'p', 's'],
   ['y', 'o', 'u', 'r', ' ', 's', 't', 'a', 'r', 't', 'u', 'p', ' ', ' ', ' '],
   ['e', 'n', 't', 'e', 'r', 'p', 'r', 'i', 's', 'e', '', 's', 'a', 'a', 's'],
@@ -70,10 +70,10 @@ function showCard() {
 function scrollToSection(sectionId, navItem) {
   var el = document.getElementById(sectionId);
   var activeNav = document.getElementById(navItem);
-  
+
   this.scrolling = true;
   el.scrollIntoView({ block: 'start', behavior: 'smooth' });
-  
+
   for (var i = 2; i <= 5; i++) {
     var inactiveNav = document.getElementById('nav-' + i);
     inactiveNav.classList.remove('active');

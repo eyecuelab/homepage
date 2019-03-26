@@ -79,7 +79,7 @@ a {
     top: 0px;
     bottom: 0px;
     left: 0px;
-    right: 0px;      
+    right: 0px;
     cursor: pointer;
     transition: all $animation-time ease;
   }
@@ -104,7 +104,7 @@ a {
 
     .close {
       position: absolute;
-      cursor: pointer;    
+      cursor: pointer;
       top: 30px;
       right: 25px;
     }
@@ -638,7 +638,7 @@ a {
         &:hover, &:active {
           background: #e6e6e6;
         }
- 
+
         &:before {
           -webkit-transform: translate3d(0, 0, 0);
           content: '\25BC';
@@ -657,7 +657,7 @@ a {
           0%, 30% {
             top: 8px;
           }
-          35%, 65% { 
+          35%, 65% {
             top: 13px;
           }
           70%, 100% {
@@ -973,7 +973,7 @@ a {
               .bullet:nth-child(#{$j}) {
                 top: #{($j * 30 - 10) + 'px'};
                 animation: marginx $animation-time #{($i * .2) + ($j * .05) + 's'} ease forwards;
-                
+
                 @include mobile {
                   top: #{($j * 25 - 10) + 'px'};
                 }
@@ -983,7 +983,7 @@ a {
         }
 
         @keyframes marginx {
-          100% { 
+          100% {
             left: 20px;
             opacity: 1;
           }
@@ -1117,7 +1117,7 @@ a {
     &.section-5 {
       text-align: center;
       min-height: 420px;
-      height: 100px; 
+      height: 100px;
       color: $text-light;
       background-color: $body-dark;
       background: linear-gradient(to right, #202023 0%, #202023 15%, #27272f 35%, #202023 85%, #202023 100%);
