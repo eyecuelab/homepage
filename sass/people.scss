@@ -324,7 +324,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 18px;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -420,10 +420,11 @@ a {
     &.section-1 {
       position: relative;
       overflow: hidden;
-      height: 120vh;
+      height: 900px;
       display: flex;
       flex-direction: column;
-      position: relative;
+      justify-content: center;
+      align-items: center;
       color: #ffffff;
       background-color: $body-light;
       background-image: url("../images/section1.png");
@@ -448,7 +449,7 @@ a {
       }
 
       .section-1-card-wrapper {
-        height: 60vh;
+        height: 500px;
         z-index: 2;
         opacity: 0.9;
         background-color: rgba(0,0,0,0);
@@ -456,8 +457,8 @@ a {
       }
 
       .section-1-card {
-        height: 100%;
-        width: inherit;
+        // width: 500px;
+        height: 500px;
         background-color: $body-light;
         display: flex;
         opacity: 1;
@@ -545,14 +546,14 @@ a {
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 100vh;
+        height: 700px;
         width: 100%;
         position: relative;
         background-attachment: fixed;
         background-position: "0px 0px";
         background-repeat: no-repeat;
         background-size: cover;
-        margin-top: -10.2vh;
+        margin-top: -71px;
 
         &:nth-child(even) {
           @include trapezoid-left;
@@ -567,10 +568,11 @@ a {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          height: 75vh;
+          height: 75%;
           width: 40%;
           max-width: 700px;
-          margin: 0 10vw;
+          margin: 0;
+          padding: 5vw;
           color: $text-light;
           @include tablet {
             width: 100%;
@@ -583,7 +585,7 @@ a {
             line-height: 20pt;
           }
           p {
-            margin-top: 2.5vh;
+            margin-top: 2.5%;
             font-family: 'Open Sans', Verdana, sans-serif;
             font-size: $body;
             line-height: $body + 4pt;
@@ -761,7 +763,7 @@ a {
       color: $text-dark;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 750px;
       width: 100%;
       z-index: 2;
 
@@ -780,6 +782,7 @@ a {
 
         @include tablet {
           flex-direction: column;
+          justify-content: space-around;
         }
       }
 
@@ -818,10 +821,6 @@ a {
           font-size: $body;
           line-height: $body + 4pt;
           color: $text-light;
-          @include mobile {
-            font-size: 9pt;
-            line-height: 11pt;
-          }
         }
         @include tablet {
           padding-top: 0;

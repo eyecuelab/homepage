@@ -6,7 +6,7 @@ function showCard() {
     var infoBox1 = document.getElementById("info-box-1");
     infoBox1.innerHTML = "";
     infoBox1.innerHTML += "<span class='sub-header'>general inquiries</span>";
-    infoBox1.innerHTML += "<span><a href='mailto:hello@eyecuelab.com'>hello@eyecuelab.com</a></span>";
+    infoBox1.innerHTML += "<span><a href='mailto:mike.west@eyecuelab.com'>mike.west@eyecuelab.com</a></span>";
     infoBox1.innerHTML += "<span><a href='tel:1-971-337-0494'>(971) 337-0494</a></span>";
     var infoBox2 = document.getElementById("info-box-2");
     infoBox2.innerHTML = "";
