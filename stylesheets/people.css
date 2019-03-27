@@ -792,7 +792,7 @@ a {
   padding-left: 20px;
   border-left: 1px solid #b6b6b6;
   line-height: 27px;
-  height: 25vh;
+  max-height: 200px;
   font-size: 8.5pt;
   justify-content: center;
   font-weight: 400;
