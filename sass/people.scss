@@ -702,15 +702,6 @@ a {
         margin: 50px auto;
         min-height: 200px;
 
-        .icon {
-          width: 7%;
-          height: 40px;
-          padding: 0px 5px;
-          color: $text-dark;
-          display: flex;
-          justify-content: center;
-        }
-
         .section-text {
           display: flex;
           flex-direction: column;
@@ -745,7 +736,7 @@ a {
           padding-left: 20px;
           border-left: 1px solid #b6b6b6;
           line-height: 27px;
-          max-height: 200px;
+          height: 200px;
           font-size: 8.5pt;
           justify-content: center;
           font-weight: 400;
