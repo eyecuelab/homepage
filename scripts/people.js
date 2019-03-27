@@ -100,16 +100,17 @@ var setBgScroll = function(el) {
   var height = win.height();
   var windowPos = win.scrollTop() + 50;
   var id = el.attr('id');
-  var offset = id == 'section-4-a' ? 50 : 0;
   var top = el.offset().top;
   var mid = top + (height * 0.25);
   var bottom = top + height;
   if (windowPos > mid && windowPos < bottom) {
     var dist = windowPos - mid;
+    var offset = id == 'section-4-a' ? 50 : 0;
     var bg = "0px " + (offset - (dist * 0.25)) + "px";
     el.css({ "background-position": bg });
   } else {
-    el.css({ "background-position": `0px ${offset}px`})
+    var offset = id == 'section-4-a' ? 'center' : '0px';
+    el.css({ "background-position": `0px ${offset}`});
   }
 }
 

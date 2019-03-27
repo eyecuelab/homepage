@@ -836,7 +836,7 @@ a {
         border-radius: 0 0 3px 3px;
         background-image: url("../images/mikewest.jpg");
         background-attachment: fixed;
-        background-position: left 50px;
+        background-position: 0px 50px;
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -846,7 +846,6 @@ a {
           left: 0;
           background-color: rgba(0,0,0,0);
           background-image: url("../images/section1pattern.png");
-          // background-size: auto;
           background-repeat: no-repeat;
           overflow: hidden;
           opacity: 0.25;
@@ -862,7 +861,7 @@ a {
         @include mobile {
           display: block;
           background-attachment: scroll;
-          background-position: left center;
+          background-position: 0px center;
           justify-content: space-around;
           padding-top: 25px;
         }
