@@ -23,6 +23,7 @@
   "homepage": "https://github.com/eyecuelab/homepage#readme",
   "dependencies": {
     "express": "^4.16.3",
+    "express-http-to-https": "^1.1.4",
     "jquery": "^3.3.1",
     "node-minify": "^3.1.0"
   }
