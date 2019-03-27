@@ -42,7 +42,8 @@ $super-header: 36pt;
 $header: 20pt;
 $header-mobile: 17pt;
 $sub-header: 16pt;
-$body: 12pt;
+$body: 14pt;
+$body-line-height: 21pt;
 $sub-text: 8pt;
 $sub-text-mobile: 6pt;
 
@@ -56,20 +57,6 @@ $body-dark: #262629;
 
 // animation
 $animation-time: 400ms;
-
-@mixin trapezoid-left {
-  -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
-  -webkit-backface-visibility: hidden;
-  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
-  backface-visibility: hidden;
-}
-
-@mixin trapezoid-right {
-  -webkit-clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 90%);
-  -webkit-backface-visibility: hidden;
-  clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 90%);
-  backface-visibility: hidden;
-}
 
 a {
   text-decoration: none;
@@ -302,7 +289,6 @@ a {
   .body-text {
     font-family: 'Open Sans', Verdana, sans-serif;
     font-size: $body;
-    font-size: 12pt;
     font-weight: 300;
     line-height: 18pt;
     color: $text-medium;
@@ -332,7 +318,7 @@ a {
     z-index: 5;
 
     @include mobile {
-      justify-content: center;
+      // justify-content: center;
     }
     @include tiny {
       justify-content: center;
@@ -343,11 +329,14 @@ a {
       width: auto;
       cursor: pointer;
       font-family: Lulo;
-      font-size: $body;
+      font-size: 8pt;
       color: $text-light;
 
       @include mobile {
-        display: none;
+        background-image: url('../images/eyecue_logo.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 27px;
       }
       @include tiny {
         display: none;
@@ -432,6 +421,7 @@ a {
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
+      max-width: 100%;
 
       @include mobile {
         background-attachment: scroll;
@@ -518,6 +508,7 @@ a {
         text-align: center;
         color: $text-dark;
         font-size: $body;
+        line-height: $body-line-height;
         font-family: 'Open Sans', Verdana, sans-serif;
         font-weight: 500;
       }
@@ -546,6 +537,24 @@ a {
         background-image: url("../images/section2d.png");
       }
 
+      .trapezoid {
+
+      }
+
+      .left-trapezoid {
+        -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        -webkit-backface-visibility: hidden;
+        clip-path: polygon(0 0, 100% 10%, 100% 90%, 0% 100%);
+        backface-visibility: hidden;
+      }
+
+      .right-trapezoid {
+        -webkit-clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 90%);
+        -webkit-backface-visibility: hidden;
+        clip-path: polygon(0 10%, 100% 0%, 100% 100%, 0% 90%);
+        backface-visibility: hidden;
+      }
+
       .sub-section {
         display: flex;
         flex-direction: row;
@@ -563,20 +572,20 @@ a {
           background-attachment: scroll;
         }
 
+
         &:nth-child(even) {
-          @include trapezoid-left;
           justify-content: flex-start;
         }
         &:nth-child(odd) {
-          @include trapezoid-right;
           justify-content: flex-end;
         }
+
 
         .section-body {
           display: flex;
           flex-direction: column;
-          justify-content: center;
-          height: 75%;
+          justify-content: flex-start;
+          height: 50%;
           width: 40%;
           max-width: 700px;
           margin: 0;
@@ -596,7 +605,7 @@ a {
             margin-top: 2.5%;
             font-family: 'Open Sans', Verdana, sans-serif;
             font-size: $body;
-            line-height: $body + 4pt;
+            line-height: $body-line-height;
           }
         }
 
@@ -623,8 +632,8 @@ a {
         flex-direction: row;
         text-align: left;
         max-width: 900px;
-        margin: 25px auto;
-        height: 250px;
+        margin: 50px auto;
+        min-height: 200px;
 
         .icon {
           width: 7%;
@@ -651,6 +660,8 @@ a {
             display: flex;
             flex-direction: column;
             padding: 0px 35px 0px 5px;
+            font-size: $body;
+            line-height: $body-line-height;
 
             span {
               padding: 8px 0px;
@@ -739,14 +750,14 @@ a {
       color: $text-dark;
       display: flex;
       flex-direction: column;
-      height: 750px;
+      height: 850px;
       width: 100%;
       z-index: 2;
 
       .sub-section {
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
         height: 100%;
         width: 100%;
@@ -763,6 +774,7 @@ a {
 
         @include mobile {
           background-attachment: scroll;
+          background-position: left center;
         }
       }
 
@@ -788,7 +800,7 @@ a {
       #section-4-text-container {
         flex: 1;
         padding: 3%;
-        margin-right: 10vw;
+        margin-right: 3vw;
         h1 {
           font-family: Lulo;
           font-size: $sub-header;
@@ -798,9 +810,9 @@ a {
         p {
           margin-top: 2.5vh;
           font-family: 'Open Sans', Verdana, sans-serif;
-          font-size: $body;
-          line-height: $body + 4pt;
-          font-weight: 400;
+          font-size: 14pt;
+          line-height: 21pt;
+          font-weight: 100;
           color: $text-light;
         }
         @include tablet {
@@ -823,6 +835,8 @@ a {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      z-index: 1;
+      margin-top: -50px;
 
       .inner-container {
         margin-top: 50px;
@@ -855,5 +869,16 @@ a {
         cursor: pointer;
       }
     }
+  }
+}
+
+.mobile-indicator {
+  display: none;
+  position: fixed;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(0,0,0,0);
+  @include mobile {
+    display: block;
   }
 }

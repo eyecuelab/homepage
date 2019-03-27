@@ -57,7 +57,9 @@
     </div>
     <div class="container">
       <div class="nav">
-        <div class="logo" onclick="scrollToSection('section-1', 0)">People EyeCue</div>
+        <div class="logo" onclick="scrollToSection('section-1', 0)">
+          <span id="logo-text"></span>
+        </div>
         <div class="nav-bar">
           <span id="nav-2" class="nav-item section-2" onclick="scrollToSection('section-2', 'nav-2')">solutions</span>
           <span id="nav-3" class="nav-item section-3" onclick="scrollToSection('section-3', 'nav-3')">focus</span>
@@ -80,7 +82,7 @@
         </div>
       </div>
       <div class="section section-2" id="section-2">
-        <div class="sub-section section-2-subsection section-2-a" id="section-2-a">
+        <div class="sub-section parallax section-2-a" id="section-2-a">
           <div class="section-body section-2-textbox">
             <div class="section-header">
               <h1>Assembling a team as unique as your organization<h1>
@@ -90,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="sub-section section-2-subsection section-2-b" id="section-2-b">
+        <div class="sub-section parallax trapezoid right-trapezoid section-2-b" id="section-2-b">
           <div class="section-body section-2-textbox">
             <div class="section-header">
               <h1>Staying agile with your implementation strategy</h1>
@@ -100,7 +102,7 @@
             </div>
           </div>
         </div>
-        <div class="sub-section section-2-subsection section-2-c" id="section-2-c">
+        <div class="sub-section parallax trapezoid left-trapezoid section-2-c" id="section-2-c">
           <div class="section-body section-2-textbox">
             <div class="section-header">
               <h1>Iterate and measure your strategy weekly, not annually</h1>
@@ -112,7 +114,7 @@
             </div>
           </div>
         </div>
-        <div class="sub-section section-2-subsection section-2-d" id="section-2-d">
+        <div class="sub-section parallax trapezoid right-trapezoid section-2-d" id="section-2-d">
           <div class="section-body section-2-textbox">
             <div class="section-header">
               <h1>Support as you need it. Freedom when you are ready.</h1>
@@ -183,9 +185,9 @@
         </div>
       </div>
       <div class="section section-4" id="section-4">
-        <div class="sub-section section-4-subsection section-4-a" id="section-4-a">
+        <div class="sub-section parallax section-4-a" id="section-4-a">
           <div class="section-4-box" id="section-4-img-container">
-            <img src="/images/book.png">
+            <a href="https://www.amazon.com/gp/product/1119434769/"><img src="/images/book.png"></img></a>
           </div>
           <div class="section-4-box" id="section-4-text-container">
             <h1>Meet the architect behind every solution</h1>
@@ -207,5 +209,6 @@
         <span class="footer-item"><a href="mailto:hello@eyecuelab.com">hello@eyecuelab.com</a></span>
       </div>
     </div>
+    <div class="mobile-indicator"></div>
   </body>
 </html>

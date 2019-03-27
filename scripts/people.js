@@ -1,6 +1,6 @@
 
 var scrolling = false;
-var parallax = $(window).width() > 667 ? true : false;
+var fullsize = false;
 
 function showCard() {
   setTimeout(function() {
@@ -99,15 +99,17 @@ var setBgScroll = function(el) {
   var win = $(window);
   var height = win.height();
   var windowPos = win.scrollTop() + 50;
+  var id = el.attr('id');
+  var offset = id == 'section-4-a' ? 50 : 0;
   var top = el.offset().top;
   var mid = top + (height * 0.25);
   var bottom = top + height;
   if (windowPos > mid && windowPos < bottom) {
     var dist = windowPos - mid;
-    var bg = "0px -" + (dist * 0.25) + "px";
+    var bg = "0px " + (offset - (dist * 0.25)) + "px";
     el.css({ "background-position": bg });
   } else {
-    el.css({ "background-position": "0px 0px"})
+    el.css({ "background-position": `0px ${offset}px`})
   }
 }
 
@@ -129,20 +131,35 @@ var fadeOnScrollOut = function(el, init, breakpt) {
   }
 }
 
-if (parallax) {
-  $(window).scroll(function() {
-    $(".section-2-subsection").each(function() {
-      var el = $(this);
-      setBgScroll(el);
-    });
-  });
+function setLogoText() {
+  if (fullsize) {
+    $("#logo-text").text("People EyeCue");
+  } else {
+    $("#logo-text").text("");
+  }
 }
+
+function setFullSize() {
+  var mobile = $(".mobile-indicator").is(':visible');
+  return !mobile
+}
+
+$(window).resize(function() {
+  fullsize = setFullSize();
+  setLogoText();
+})
 
 $(window).scroll(function() {
   $(".section-2-textbox").each(function() {
     var el = $(this);
-    fadeOnScrollOut(el, 1, 0.9);
-  })
+    fadeOnScrollOut(el, 1, 1);
+  });
+  if (fullsize) {
+    $(".parallax").each(function() {
+      var el = $(this);
+      setBgScroll(el);
+    });
+  }
 });
 
 $(document).ready(function() {
@@ -163,4 +180,6 @@ window.addEventListener('resize', function(e) {
 
 window.onload = function() {
   setActiveNav();
+  fullsize = setFullSize();
+  setLogoText();
 }
