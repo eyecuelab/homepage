@@ -1,5 +1,6 @@
 
 var scrolling = false;
+var parallax = $(window).width() > 667 ? true : false;
 
 function showCard() {
   setTimeout(function() {
@@ -128,11 +129,16 @@ var fadeOnScrollOut = function(el, init, breakpt) {
   }
 }
 
-$(window).scroll(function() {
-  $(".section-2-subsection").each(function() {
-    var el = $(this);
-    setBgScroll(el);
+if (parallax) {
+  $(window).scroll(function() {
+    $(".section-2-subsection").each(function() {
+      var el = $(this);
+      setBgScroll(el);
+    });
   });
+}
+
+$(window).scroll(function() {
   $(".section-2-textbox").each(function() {
     var el = $(this);
     fadeOnScrollOut(el, 1, 0.9);
