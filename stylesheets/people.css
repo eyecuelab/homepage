@@ -522,7 +522,7 @@ a {
 }
 /* line 486, ../sass/people.scss */
 .container .section.section-1 .section-1-card-title {
-  height: 50%;
+  height: 20%;
   display: flex;
   justify-content: center;
   align-items: center;

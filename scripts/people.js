@@ -25,7 +25,8 @@ function scrollToSection(sectionId, navItem) {
   var activeNav = document.getElementById(navItem);
 
   this.scrolling = true;
-  el.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  var topOfElement = el.offsetTop - 50;
+  window.scroll({ top: topOfElement, behavior: "smooth" });
 
   for (var i = 2; i <= 5; i++) {
     var inactiveNav = document.getElementById('nav-' + i);
@@ -109,7 +110,7 @@ var setBgScroll = function(el) {
     var bg = "0px " + (offset - (dist * 0.25)) + "px";
     el.css({ "background-position": bg });
   } else {
-    var offset = id == 'section-4-a' ? 'center' : '0px';
+    var offset = id == 'section-4-a' ? '50px' : '0px';
     el.css({ "background-position": `0px ${offset}`});
   }
 }
@@ -160,6 +161,8 @@ $(window).scroll(function() {
       var el = $(this);
       setBgScroll(el);
     });
+  } else {
+    $("#section-4-a").css({ "background-position": "0px center" });
   }
 });
 
