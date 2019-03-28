@@ -95,11 +95,6 @@ function setActiveNav() {
   }
 }
 
-function book() {
-  console.log('hi');
-  // window.location.href = "https://www.amazon.com/gp/product/1119434769/"
-}
-
 var setBgScroll = function(el) {
   var win = $(window);
   var height = win.height();
@@ -129,10 +124,6 @@ var fadeOnScrollOut = function(el, init, breakpt) {
   if (windowPos > top && windowPos < mid) {
     var ratio = 1 - (windowPos - top) / (mid - top);
     var opacity = `${ratio * init}`;
-    console.log(`windowPos: ${windowPos}`);
-    console.log(`top: ${top}`);
-    console.log(`mid: ${mid}`);
-    console.log(`opacity: ${opacity}`);
     el.css({ "opacity": opacity });
   } else if (windowPos > mid) {
     el.css({ "opacity": 0 });
@@ -169,17 +160,15 @@ $(window).scroll(function() {
       var el = $(this);
       setBgScroll(el);
     });
-  } else {
-    $("#section-4-a").css({ "background-position": "0px center" });
   }
 });
 
 $(document).ready(function() {
   setTimeout(function() {
     $(window).scroll(function() {
-      fadeOnScrollOut($(".section-1-card-wrapper"), 0.95, 0.5);
+      fadeOnScrollOut($(".section-1-card-wrapper"), 0.95, 0.4);
     });
-  }, 1500) // set delay equal to the duration of the animation as set in .section-1-card animation in styles.scss
+  }, 1500) // set delay equal to the duration of the element's animation
 });
 
 window.addEventListener('scroll', function(e) {

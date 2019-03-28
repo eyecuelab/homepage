@@ -835,7 +835,19 @@ a {
         height: 100%;
         width: 100%;
         border-radius: 0 0 3px 3px;
-        background-color: rgba(0,0,0,1);
+        background-color: #00c4ff;
+
+        @include tablet {
+          flex-direction: column;
+          justify-content: space-around;
+        }
+
+        @include mobile {
+          display: block;
+          // background-attachment: scroll;
+          justify-content: space-around;
+          // padding-top: 25px;
+        }
 
         .img-filter {
           position: absolute;
@@ -847,19 +859,6 @@ a {
           height: 100%;
           background-image: url("../images/section1pattern.png");
           opacity: 0.5;
-        }
-
-        @include tablet {
-          flex-direction: column;
-          justify-content: space-around;
-        }
-
-        @include mobile {
-          display: block;
-          background-attachment: scroll;
-          background-position: 0px center;
-          justify-content: space-around;
-          padding-top: 25px;
         }
       }
 
@@ -876,6 +875,13 @@ a {
         background-repeat: no-repeat;
         background-size: cover;
         opacity: 0.6;
+
+        @include mobile {
+          background-attachment: scroll;
+          padding-top: 25px;
+          background-position: 0px center;
+        }
+
       }
 
       .section-4-box {
