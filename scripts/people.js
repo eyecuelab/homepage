@@ -126,8 +126,8 @@ var fadeOnScrollOut = function(el, init, breakpt) {
     var ratio = 1 - (windowPos - top) / (mid - top);
     var opacity = `${ratio * init}`;
     el.css({ "opacity": opacity });
-  } else if (windowPos > mid && windowPos < bottom) {
-    el.css({ "opacity": 0 })
+  } else if (windowPos > mid) {
+    el.css({ "opacity": 0 });
   } else {
     el.css({ "opacity": init });
   }
