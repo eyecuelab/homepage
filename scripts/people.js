@@ -1,3 +1,4 @@
+
 var scrolling = false;
 var fullsize = false;
 
@@ -148,7 +149,7 @@ function setFullSize() {
 $(window).resize(function() {
   fullsize = setFullSize();
   setLogoText();
-})
+});
 
 $(window).scroll(function() {
   $(".section-2-textbox").each(function() {
