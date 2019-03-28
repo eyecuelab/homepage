@@ -16,6 +16,6 @@ app.get('/', function (req, res) {
 
 app.get('/people', function (req, res) {
   res.sendFile(path.join(__dirname + '/people.html'));
-})
+});
 
 app.listen(process.env.PORT || 8080);
