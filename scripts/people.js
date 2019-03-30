@@ -2,23 +2,17 @@
 var scrolling = false;
 var fullsize = false;
 
-function showCard() {
-  setTimeout(function() {
-    var infoBox1 = document.getElementById("info-box-1");
-    infoBox1.innerHTML = "";
-    infoBox1.innerHTML += "<span class='sub-header'>general inquiries</span>";
-    infoBox1.innerHTML += "<span><a href='mailto:mike.west@eyecuelab.com'>mike.west@eyecuelab.com</a></span>";
-    infoBox1.innerHTML += "<span><a href='tel:1-971-337-0494'>(971) 337-0494</a></span>";
-    var infoBox2 = document.getElementById("info-box-2");
-    infoBox2.innerHTML = "";
-    infoBox2.innerHTML += "<span class='sub-header'>location</span>";
-    infoBox2.innerHTML += "<span>532 NW 12th Ave</span>";
-    infoBox2.innerHTML += "<span>Portland, OR 97209</span>";
-    infoBox1.classList.add('animate-1');
-    infoBox2.classList.add('animate-2');
-  }, 0);
+function openModal() {
+  var el = document.getElementById('overlay');
+  el.classList.add("show");
+  $('body').css({ "overflow": "hidden" });
 }
 
+function closeModal() {
+  var el = document.getElementById('overlay');
+  el.classList.remove("show");
+  $('body').css({ "overflow": "auto" });
+}
 
 function scrollToSection(sectionId, navItem) {
   var el = document.getElementById(sectionId);
@@ -40,17 +34,6 @@ function scrollToSection(sectionId, navItem) {
   setTimeout(function() {
     this.scrolling = false;
   }, 1100);
-}
-
-function openModal() {
-  var el = document.getElementById('overlay');
-  el.classList.add("show");
-  this.showCard()
-}
-
-function closeModal() {
-  var el = document.getElementById('overlay');
-  el.classList.remove("show");
 }
 
 function setActiveNav() {
@@ -169,7 +152,27 @@ $(document).ready(function() {
     $(window).scroll(function() {
       fadeOnScrollOut($(".section-1-card-wrapper"), 0.95, 0.4);
     });
-  }, 1500) // set delay equal to the duration of the element's animation
+  }, 1500); // set delay equal to the duration of the element's animation
+
+  $("#contact-form").submit(function(e) {
+    e.preventDefault();
+    closeModal();
+    var email = $('input[name="email"]').val();
+    var hris = $('select[name="HRIS"]').val();
+    var size = $('select[name="company-size"]').val();
+    // var url = `http://localhost:8080/contact`;
+    var url = `https://www.eyecuelab.com/contact`;
+    var data = { email, hris, size };
+    $.ajax({
+      url,
+      dataType: 'json',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify(data),
+      success: function() { console.log('done') },
+      error: function() { console.log('error') }
+    });
+  });
 });
 
 window.addEventListener('scroll', function(e) {

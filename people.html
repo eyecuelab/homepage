@@ -53,6 +53,7 @@
       gtag('js', new Date());
       gtag('config', 'UA-36532215-1');
     </script>
+
     <script type="application/ld+json">
       {
         "@context" : "http://schema.org",
@@ -83,8 +84,43 @@
       <div class="overlay" onclick="closeModal()"></div>
       <div class="contact-card">
         <div class="close" onclick="closeModal()">X</div>
-        <div class='info-box' id='info-box-1'></div>
-        <div class='info-box' id='info-box-2'></div>
+        <div class="content-container">
+          <div class='info-box' id='info-box-1'>
+            <h1>Make smarter decisions than ever before.</h1>
+            <p>The era of making critical business decisions by opinion and gut-feel is coming to an end. People EyeCue is helping the world’s most innovative companies employ people analytics– machine-learning-backed workforce data collection and analysis.</p>
+            <ul>
+              <li><p>We’ll help you improve talent attraction, development, and retention.</p></li>
+              <li><p>Your decisions are backed up by rock-solid data science.</p></li>
+              <li><p>We’ll provide you the visualizations you need to win organization consensus.</p></li>
+            </ul>
+          </div>
+          <div class='info-box' id='info-box-2'>
+            <h1>Free 30 minute consultation with Mike West.</h1>
+            <form id="contact-form">
+              <input type="text" name="email" placeholder="Email Address">
+              <select name="HRIS">
+                <option value="0" disabled selected>Your Current HRIS</option>
+                <option value="Oracle">Oracle</option>
+                <option value="Infor">Infor</option>
+                <option value="Workday">Workday</option>
+                <option value="Kronos">Kronos</option>
+                <option value="Dayforce">Dayforce</option>
+                <option value="SAP">SAP</option>
+                <option value="Other">Other</option>
+              </select>
+              <select name="company-size">
+                <option value="0" disabled selected>Your Company's Size</option>
+                <option value="1-100">1-100</option>
+                <option value="101-250">101-250</option>
+                <option value="251-500">251-500</option>
+                <option value="501-2500">501-2500</option>
+                <option value="2501-5000">2501-5000</option>
+                <option value="5001+">5001+</option>
+              </select>
+              <button class="form-submit" type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <div class="container">
@@ -99,7 +135,7 @@
           <span id="nav-5" class="nav-item section-5" onclick="scrollToSection('section-5', 'nav-5')">contact us</span>
         </div>
       </div>
-      <div class="section section-1 asyncImage" id="section-1">
+      <div class="section section-1" id="section-1">
         <div class="img-filter section-1-texture">
         </div>
         <div class="section-1-card-wrapper">
@@ -160,16 +196,21 @@
         </div>
       </div>
       <div class="section section-3" id="section-3">
+        <div class="block-quote">
+          <div class="quotes open-quote">&ldquo;</div>
+          <p class="quote-text">Globally, across all regions, CEOs rank attracting and retaining top talent as their #1 internal concern.</p>
+          <p class="quote-text author"> &mdash; Conference Board</p>
+          <div class="quotes close-quote">&rdquo;</div>
+        </div>
         <div class="header">
           <span>Our areas of expertise</span>
-          <span>in black and white</span>
         </div>
         <div>
           <div class="sub-section">
             <div class="section-text">
-              <div class="section-header">People Analytics Strategy</div>
+              <div class="section-header"><h1>People Analytics Strategy</h1></div>
               <div class="section-body body-text">
-                <span>Strategy encompasses the plans and policies intended to help a company gain a sustainable edge over its competitors as efficiently as possible. It represents the art and science of developing and using the object and actions within the control of an organization in a deliberate manner in order to increase the probability of victory and to lessen the chances of defeat.</span>
+                <p>Strategy encompasses the plans and policies intended to help a company gain a sustainable edge over its competitors as efficiently as possible. It represents the art and science of developing and using the object and actions within the control of an organization in a deliberate manner in order to increase the probability of victory and to lessen the chances of defeat.</p>
               </div>
             </div>
             <div class="section-bullets">
@@ -183,9 +224,9 @@
           </div>
           <div class="sub-section">
             <div class="section-text">
-              <div class="section-header">Validate Your Strategy with Science</div>
+              <div class="section-header"><h1>Validate Your Strategy with Science</h1></div>
               <div class="section-body body-text">
-                <span>We use statistical models, artificial intelligence, and machine learning methods to deal with the collection, organization, analysis, and interpretation of numerical data. This data enables continuous refinement of your People Analytics strategy to maximize results and reduce "time-to-learning". </span>
+                <p>We use statistical models, artificial intelligence, and machine learning methods to deal with the collection, organization, analysis, and interpretation of numerical data. This data enables continuous refinement of your People Analytics strategy to maximize results and reduce "time-to-learning". </p>
               </div>
             </div>
             <div class="section-bullets">
@@ -199,9 +240,9 @@
           </div>
           <div class="sub-section">
             <div class="section-text">
-              <div class="section-header">Automate Your Systems</div>
+              <div class="section-header"><h1>Automate Your Systems</h1></div>
               <div class="section-body body-text">
-                <span>Your highly configurable People Analytics solution is designed from the ground up to reduce your workload and get you the answers you need without having to learn a new language. Depending on your needs, People EyeCue can bring intelligent data acquisition to your organization with little-to-no support required from your IT department. HR has never been so self-sufficient.</span>
+                <p>Your highly configurable People Analytics solution is designed from the ground up to reduce your workload and get you the answers you need without having to learn a new language. Depending on your needs, People EyeCue can bring intelligent data acquisition to your organization with little-to-no support required from your IT department. HR has never been so self-sufficient.</p>
               </div>
             </div>
             <div class="section-bullets">
@@ -225,9 +266,11 @@
           </div>
           <div class="section-4-box" id="section-4-text-container">
             <h1 id="section-4-fullsize-title" class="section-4-box-title">Meet Mike West,<br> Co-Founder and People EyeCue CHRO</h1>
+            <p>As head of analytics, Mike’s experience and leadership powers every People EyeCue project. He literally wrote the book on People Analytics and brings a unique perspective about how to use data to create winning companies and great places to work.</p>
+
             <p>Mike was a pioneer of people analytics at Merck, PetSmart, Google, Children's Health Dallas, Jawbone, and Pure Storage. Mike has made other data informed human resource management contributions at Atlassian, Udemy, Otsuka, AstraZeneca, University of Minnesota Clerical Labor Union & Hallmark.</p>
 
-            <p>Mike was an early analyst hire on Google's world-renowned People Operations team credited with using data to reinvent HR and turn Google into the talent magnet that it is today.</p>
+            <p>Mike was an early analyst hires on Google's world-renowned People Operations team credited with using data to reinvent HR and turn Google into the talent magnet that it is today.</p>
           </div>
           <div class="img-filter">
           </div>

@@ -1,3 +1,4 @@
 .sass-cache/**/*
 people-design.psd
-node_modules/
+node_modules
+.env
