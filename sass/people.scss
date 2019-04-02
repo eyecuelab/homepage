@@ -221,8 +221,38 @@ a {
           border-radius: 3px;
         }
       }
-    }
 
+      .status-container {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: white;
+
+        .pending-item {
+          font-size: 30pt;
+          margin: 0 5px;
+
+          @keyframes pending {
+            0% { color: white; }
+            50% { color: $body-dark; }
+            100% { color: white; }
+          }
+
+          @for $i from 1 through 3 {
+            &.pending-item-#{$i} {
+              animation: pending 2s linear #{0 + ($i - 1)*.2}s infinite
+            }
+          }
+        }
+
+        .error {
+          color: darken(red, 10%);
+        }
+      }
+
+    }
   }
 
   &.show {
@@ -1083,7 +1113,6 @@ a {
     }
   }
 
-
 }
 
 .mobile-indicator {
@@ -1094,5 +1123,19 @@ a {
   background-color: rgba(0,0,0,0);
   @include mobile {
     display: block;
+  }
+}
+
+// sched.html
+#schedule-section-1 {
+  height: calc(100vh - 50px);
+
+  .calendly-inline-widget {
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50px;
+    left: 0;
   }
 }

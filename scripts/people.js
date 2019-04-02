@@ -147,6 +147,16 @@ $(window).scroll(function() {
   }
 });
 
+function formSubmissionOnSuccess(msg) {
+
+}
+
+function formSubmissionOnFail(err) {
+  var el = $(".form-submit-container");
+  el.text("");
+  el.append(`<span class="submit-status-message">There was a problem submitting your request. Please refresh your browser and try again. Error Code: <span class="error">${err.status}</span> Error Message: <span class="error">${err.responseText}</span></span>`);
+}
+
 $(document).ready(function() {
   setTimeout(function() {
     $(window).scroll(function() {
@@ -156,21 +166,39 @@ $(document).ready(function() {
 
   $("#contact-form").submit(function(e) {
     e.preventDefault();
-    closeModal();
+    var location = window.location.href
+    var url;
+    if (location.includes("localhost")) {
+      url = `http://localhost:8080/contact`;
+    } else if (location.includes("eyecue")) {
+      url = `https://www.eyecuelab.com/contact`;
+    } else {
+      console.warn('Error at people.js in form submission: window.location.href did not match either "localhost" nor "eyecue". Aborting submission.');
+      return;
+    }
     var email = $('input[name="email"]').val();
     var hris = $('select[name="HRIS"]').val();
     var size = $('select[name="company-size"]').val();
-    // var url = `http://localhost:8080/contact`;
-    var url = `https://www.eyecuelab.com/contact`;
     var data = { email, hris, size };
-    $.ajax({
+    $(".form-container").html("<div class='status-container'></div>");
+    for (let i = 1; i <= 3; i++) {
+      $(".status-container").append(`<span class="pending-item pending-item-${i}">.</span>`);
+    }
+    var req = $.ajax({
       url,
       dataType: 'json',
       method: 'POST',
       contentType: 'application/json',
       data: JSON.stringify(data),
-      success: function() { console.log('done') },
-      error: function() { console.log('error') }
+    }).done(res => {
+      console.log(res);
+      $(".status-container").text("");
+      $(".status-container").append(res.responseText);
+    }).fail(err => {
+      var res = err.responseJSON;
+      console.warn(res.message);
+      $(".status-container").text("");
+      $(".status-container").append(`<p>There was an error submitting your request. Please refresh your browser and try again. Error code: <span class="error">${res.code}</span> Error message: <span class="error">${res.message}</span></p>`);
     });
   });
 });

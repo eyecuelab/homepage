@@ -22,17 +22,43 @@ app.get('/people', function (req, res) {
   res.sendFile(path.join(__dirname + '/people.html'));
 });
 
+app.get('/people/schedule', function (req, res) {
+  res.sendFile(path.join(__dirname + '/sched.html'));
+});
+
 app.post('/contact', function (req, res) {
   console.log('Received contact form submission, sending response via email.');
   const sgMail = require('@sendgrid/mail');
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+  const HRIS = [
+    "disabled",
+    "Oracle",
+    "Infor",
+    "Workday",
+    "Kronos",
+    "Dayforce",
+    "SAP",
+    "Other"
+  ];
+
+  const COMPANY_SIZE = [
+    "disabled",
+    "1-100",
+    "101-250",
+    "251-500",
+    "501-2500",
+    "2501-5000",
+    "5001+"
+  ];
+
   const emails = [
     {
       to: req.body.email,
       from: 'hello@eyecuelab.com',
       subject: 'Thank You For Your Interest In People EyeCue',
-      body: 'Thank you for your interest in People EyeCue, we will get back to you shortly.',
-      html: '<p>Thank you for your interest in People EyeCue, we will get back to you shortly.</p>'
+      body: 'Thank you for your interest in People EyeCue. To schedule a time for your 30 minute consultation, please visit https://www.eyecuelab.com/people/schedule',
+      html: `<p>Thank you for your interest in People EyeCue. <a href="https://www.eyecuelab.com/people/schedule?a1=${req.body.hris}&a2=${req.body.size}">Click here</a> to schedule a time for your 30 minute consultation.</p>`
     },
     {
       to: 'mike.west@eyecuelab.com',
@@ -41,8 +67,8 @@ app.post('/contact', function (req, res) {
       body: `
       Received information inquiry from https://www.eyecuelab.com/people.
       From: ${req.body.email}
-      Current HRIS: ${req.body.hris}
-      Company Size: ${req.body.size}
+      Current HRIS: ${HRIS[req.body.hris]}
+      Company Size: ${COMPANY_SIZE[req.body.size]}
       `,
       html: `
       <h2>Received information inquiry from https://www.eyecuelab.com/people.</h2>
@@ -54,13 +80,15 @@ app.post('/contact', function (req, res) {
   ];
   sgMail.send(emails)
   .then(() => {
-    console.log(`Response email sent to ${req.body.email}.`);
-    return res.json({ msg: `Response email sent to ${req.body.email}.`});
+    console.log(`Response sent to ${req.body.email}.`);
+    res.status(200).send({
+      responseText: `<p>Your request has been sent. Please check your email to schedule a time for your consultation.</p>`
+    });
   })
   .catch(err => {
     console.log('Error sending email.');
     console.error(err.toString());
-    return res.json({ error: err.toString() });
+    res.status(err.code ? err.code : 400).send(err);
   });
 });
 
