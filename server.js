@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+var fs = require('fs');
 var express = require('express');
 var app = express();
 var path = require('path');
@@ -93,3 +94,4 @@ app.post('/contact', function (req, res) {
 });
 
 app.listen(process.env.PORT || 8080);
+fs.openSync('/tmp/app-initialized', 'w');
