@@ -93,5 +93,5 @@ app.post('/contact', function (req, res) {
   });
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080);
 fs.openSync('/tmp/app-initialized', 'w');

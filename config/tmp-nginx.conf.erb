@@ -1,0 +1,82 @@
+daemon off;
+# Heroku dynos have at least 4 cores.
+worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
+
+events {
+  use epoll;
+  accept_mutex on;
+  worker_connections 1024;
+}
+
+http {
+  gzip on;
+  gzip_comp_level 2;
+  gzip_min_length 512;
+
+  server_tokens off;
+
+  log_format l2met 'measure#nginx.service=$request_time request_id=$http_x_request_id';
+  access_log logs/nginx/access.log l2met;
+  error_log logs/nginx/error.log;
+
+  include mime.types;
+  default_type application/octet-stream;
+  sendfile on;
+
+  # Must read the body in 5 seconds.
+  client_body_timeout <%= ENV['NGINX_CLIENT_BODY_TIMEOUT'] || 5 %>;
+
+  # upstream app_server {
+  #   server unix:/tmp/nginx.socket fail_timeout=0;
+  # }
+
+  server {
+    listen <%= ENV["PORT"] %>;
+    server_name _;
+    keepalive_timeout 5;
+    client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
+
+    access_log logs/nginx/access.log l2met;
+    error_log logs/nginx/error.log;
+
+    location / {
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_redirect off;
+      proxy_pass http://127.0.0.1:8080;
+    }
+
+    location /blog/ {
+        client_max_body_size 10G; # Required for uploading large files
+
+        # # Proxy Settings, all required
+        # resolver 1.1.1.1 8.8.8.8; # Prevent caching the upstream IP - use preferred DNS resolvers or leave as default
+        # set $ghost_url https://eyecue-blog.herokuapp.com;
+        # proxy_pass $ghost_url; # Variable name must match line above, use of variable required for resolver
+        # proxy_redirect off;
+        # proxy_set_header Host eyecue-blog.herokuapp.com;
+        # proxy_set_header X-Forwarded-Host eyecuehomepage.herokuapp.com;
+        # proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        # # Proxy Settings, all required
+        # resolver 1.1.1.1 8.8.8.8; # Prevent caching the upstream IP - use preferred DNS resolvers or leave as default
+        # set $ghost_url https://eyecue-blog.herokuapp.com;
+        # proxy_pass $ghost_url; # Variable name must match line above, use of variable required for resolver
+        # proxy_redirect off;
+        # proxy_set_header Host $http_host;
+        # proxy_set_header X-Forwarded-Host eyecuehomepage.herokuapp.com;
+        # proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        proxy_pass https://eyecue-blog.herokuapp.com;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    if ($http_x_forwarded_proto = "http") {
+      return 301 https://$host$request_uri;
+    }
+  }
+
+}
