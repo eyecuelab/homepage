@@ -33,11 +33,11 @@ http {
     client_max_body_size <%= ENV['NGINX_CLIENT_MAX_BODY_SIZE'] || 1 %>M;
 
     location /blog/ {
-      proxy_pass https://eyecue-blog.herokuapp.com/;
+      proxy_pass <%= ENV['BLOG_URL'] %>;
       proxy_redirect off;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
       # proxy_set_header Host $http_host;
-      proxy_set_header X-Forwarded-Host eyecuehomepage.herokuapp.com;
+      proxy_set_header X-Forwarded-Host <%= ENV['SELF_HOST'] %>;
     }
 
     location / {
