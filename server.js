@@ -32,17 +32,6 @@ app.post('/contact', function (req, res) {
   const sgMail = require('@sendgrid/mail');
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-  const HRIS = [
-    "disabled",
-    "Oracle",
-    "Infor",
-    "Workday",
-    "Kronos",
-    "Dayforce",
-    "SAP",
-    "Other"
-  ];
-
   const COMPANY_SIZE = [
     "disabled",
     "1-100",
@@ -59,7 +48,7 @@ app.post('/contact', function (req, res) {
       from: 'hello@eyecuelab.com',
       subject: 'Thank You For Your Interest In People EyeCue',
       body: 'Thank you for your interest in People EyeCue. To schedule a time for your 30 minute consultation, please visit https://www.eyecuelab.com/people/schedule',
-      html: `<p>Thank you for your interest in People EyeCue. <a href="https://www.eyecuelab.com/people/schedule?a1=${req.body.hris}&a2=${req.body.size}">Click here</a> to schedule a time for your 30 minute consultation.</p>`
+      html: `<p>Thank you for your interest in People EyeCue. <a href="https://www.eyecuelab.com/people/schedule?hris=${req.body.hris}&size=${req.body.size}">Click here</a> to schedule a time for your 30 minute consultation.</p>`
     },
     {
       to: 'mike.west@eyecuelab.com',
@@ -68,17 +57,18 @@ app.post('/contact', function (req, res) {
       body: `
       Received information inquiry from https://www.eyecuelab.com/people.
       From: ${req.body.email}
-      Current HRIS: ${HRIS[req.body.hris]}
+      Current HRIS: ${req.body.hris}
       Company Size: ${COMPANY_SIZE[req.body.size]}
       `,
       html: `
       <h2>Received information inquiry from https://www.eyecuelab.com/people.</h2>
       <p>From: <strong>${req.body.email}</strong></p>
       <p>Current HRIS: <strong>${req.body.hris}</strong></p>
-      <p>Company Size: <strong>${req.body.size}</strong></p>
+      <p>Company Size: <strong>${COMPANY_SIZE[req.body.size]}</strong></p>
       `
     }
   ];
+
   sgMail.send(emails)
   .then(() => {
     console.log(`Response sent to ${req.body.email}.`);

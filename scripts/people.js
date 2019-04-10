@@ -116,6 +116,14 @@ var fadeOnScrollOut = function(el, init, breakpt) {
   }
 }
 
+function hideButtonInInvisibleParent(parent, button) {
+  if (parent.css("opacity") == 0) {
+    button.css({ "display": "none" });
+  } else {
+    button.css({ "display": "block" });
+  }
+}
+
 function setLogoText() {
   if (fullsize) {
     $("#logo-text").text("People EyeCue");
@@ -145,17 +153,8 @@ $(window).scroll(function() {
       setBgScroll(el);
     });
   }
+  hideButtonInInvisibleParent($(".section-1-card-wrapper"), $("#section-1-open-modal"));
 });
-
-function formSubmissionOnSuccess(msg) {
-
-}
-
-function formSubmissionOnFail(err) {
-  var el = $(".form-submit-container");
-  el.text("");
-  el.append(`<span class="submit-status-message">There was a problem submitting your request. Please refresh your browser and try again. Error Code: <span class="error">${err.status}</span> Error Message: <span class="error">${err.responseText}</span></span>`);
-}
 
 $(document).ready(function() {
   setTimeout(function() {
@@ -177,7 +176,7 @@ $(document).ready(function() {
       return;
     }
     var email = $('input[name="email"]').val();
-    var hris = $('select[name="HRIS"]').val();
+    var hris = $('input[name="HRIS"]').val();
     var size = $('select[name="company-size"]').val();
     var data = { email, hris, size };
     $(".form-container").html("<div class='status-container'></div>");

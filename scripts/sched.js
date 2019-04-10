@@ -31,3 +31,8 @@ window.addEventListener('resize', function(e) {
   fullsize = setFullSize();
   setLogoText();
 });
+
+$(document).ready(function(){
+	var div = $("iframe").contents().find("#page-region");
+  console.log(div);
+});
