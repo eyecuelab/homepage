@@ -59,8 +59,8 @@ function showCard() {
     var infoBox2 = document.getElementById("info-box-2");
     infoBox2.innerHTML = "";
     infoBox2.innerHTML += "<span class='sub-header'>location</span>";
-    infoBox2.innerHTML += "<span>532 NW 12th Ave</span>";
-    infoBox2.innerHTML += "<span>Portland, OR 97209</span>";
+    infoBox2.innerHTML += "<span>PO Box 82500</span>";
+    infoBox2.innerHTML += "<span>Portland, OR 97202</span>";
     infoBox1.classList.add('animate-1');
     infoBox2.classList.add('animate-2');
   }, 0);
